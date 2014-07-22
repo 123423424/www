@@ -1,0 +1,223 @@
+.bs-docs-nav .navbar-toggle .icon-bar {
+    background-color: #2A64B9;
+}
+
+.myimg  {    
+  width: auto;
+  height: 130px;
+
+}
+.clear {
+    width: 100%;
+}
+/*
+.ddd {
+    border-radius: 30px;
+    margin: 50px;
+    
+}
+
+.ddd2 {
+    height: 200px;
+    width: 200px;
+    background-image:linear-gradient(to bottom,#CCDFF0 0,#245E9E 100%);
+    margin: 50px;
+    
+}*/
+
+
+.bs-docs-featurette-my {
+    background-color: hsl(0, 0%, 100%);
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 33%);
+    font-size: 16px;
+    line-height: 1.5;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.my-not-padding{
+    padding:0 !important;
+}
+.my-margin{
+    padding: 20px 
+}
+.my-width{
+min-width: 220px !important;
+}
+
+.map{
+    max-width: 80%; 
+    height: 400px;
+    margin: 0 auto;
+    
+}
+.ymaps-map{
+    border-radius: 20px;
+}
+.my-form{
+    margin: 8px 0;
+}
+.navbar-form.navbar-right.my-form:last-child {
+    margin-right: 0;
+}
+.pointer{
+    cursor: pointer;
+}
+
+#form-log{
+    display: none;
+    z-index: 1070;
+    
+}
+
+.bg-opacity05{
+    background-color: hsl(0, 0%, 0%);
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    width: 100%;   
+}
+
+#table_autor{    
+    border-radius: 10px;    
+    left: 35%;
+    min-height: 250px;
+    position: fixed;
+    top: 5%;
+    width: 450px;
+}
+.padding10{
+    padding: 10px;
+}
+.modal-footer{
+    margin-top:0;    
+}
+
+.modal-body {
+    padding-bottom: 0px;
+  
+}
+
+
+.dotted{
+ border-bottom: 1px dotted hsl(0, 0%, 20%);
+    text-decoration: none;
+    }
+    
+.dotted:hover{
+ border-bottom:  none;
+    }   
+    
+ .font60{
+    font-size: 60%;
+ } 
+ .navbar-brand60 {
+    min-height: 60px;
+ }
+ 
+ .city{
+    line-height: 17px;
+    /*margin-left: -30px !important;*/
+ }
+
+ #login{
+   line-height: 15px;
+    padding-bottom: 10px;
+    
+ }
+
+/*header .col-sm-2 {
+    padding: 0;
+    width: 1.6667%;
+}*/
+
+.navbar-nav {
+    margin-bottom:0.5px !important;
+    
+}
+
+.navbar-brand-xs {
+    padding: 20px 10px;
+ }
+.navbar-brand { 
+    padding-left: 5px;
+    padding-right: 5px;
+
+    
+}
+.p-centr{
+    position: static;
+    text-align: center;
+    float: none !important;
+}
+.menu{
+    text-align: center;
+    color: hsl(264, 34%, 36%);
+}
+.icon-bar {    
+    width: 37px !important;
+} 
+.font20{
+    font-size: 20px;
+}
+
+.font40{
+    font-size: 40px;
+}
+.mt55{
+    margin-top: 55px;
+}
+.mt25{
+    margin-top: 25px;
+}
+/*.radi:hover{
+    color: red;
+    transform: rotate(60deg);
+}*/
+.dengi{
+    
+     
+     /*width: 40px;*/
+     height: 40px;
+
+}
+
+.width-dengi{
+    width: 120px;
+    margin-bottom: 5px; 
+}
+.dengi-info{
+    width: 120px;
+    float: left;
+    margin-right: 20px;
+}
+.my-indent{
+    text-indent: 40px;
+}
+          
+.bs-docs-masthead{
+    padding-top: 80px !important;
+
+}
+
+.pd{
+    padding-left: 10px;
+   
+}
+
+.btn-w170{
+    width: 170px;
+}
+.btn-mgb10{
+    margin-bottom: 10px
+}
+#check1{
+    font-size: 120%;
+}
+#form-other {
+    display: none;
+}

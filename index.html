@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+  <![endif]-->
+  <!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8">
+    <![endif]-->
+    <!--[if IE 8]>
+    <html class="no-js lt-ie9">
+      <![endif]-->
+      <!--[if gt IE 8]>
+      <!-->
+      <html class="no-js">
+        <!--<![endif]-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Оплата</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/1.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <script src="js/main_oplata.js"></script>
+
+</head>
+
+<body  class="bs-docs-home">
+
+        <!-- Modal  Login-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content panel panel-primary">
+              <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title panel-title" id="myModalLabel">Вход / Регистрация</h3>
+              </div>
+              <div class="modal-body">
+                <form role="form">
+                  <div class="form-group has-success has-feedback">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Введите email">
+                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-error has-feedback">
+                    <label for="exampleInputPassword1">Пароль</label>
+
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+
+                    <p class="bg-danger padding10">Введен не верный пароль</p>
+                  </div>
+                  <div class="form-group">
+
+                    <a href="">Забыли пароль? Восстановить.</a>
+                  </div>
+
+                  <div class="modal-footer">
+                    <div class="btn-group btn-group-justified">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default">Зарегистрироваться</button>
+                      </div>
+                      <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal  geo-->
+        <div class="modal fade" id="geo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content panel panel-primary">
+              <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title panel-title" id="myModalLabel">Выберите город</h3>
+              </div>
+              <div class="modal-body lead">
+                <a href="">Москва</a>
+                <br />
+                <a href="">Санкт-петербург</a>
+                <br />
+                <a href="">Новосибирск</a>
+                <br />
+              </div>
+
+              <div class="modal-footer">
+                <div class="text-left">
+                  Если вашего города нет в списке, вы можете  связаться с нами
+                  <a href="/контакты.html" target="_blank">удобным для вас способом</a>
+                  .
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="sr-only" href="#content">Перейти к основному содержанию</a>
+
+        <!-- header -->
+        <header id="top" class="navbar navbar-fixed-top  bs-docs-nav" role="banner">
+          <div class="container">
+
+            <!-- Кнопка сворачивания -->
+            <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="menu" >Меню</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+              </button>
+              <a class="navbar-brand hidden-xs" href="/">5+ автомат</a>
+              <a class="navbar-brand visible-xs" href="/"> А+5</a>
+              <!-- Телефон navbar-brand-xs -->
+              <a class="navbar-brand navbar-brand60 pointer city visible-xs navbar-brand-xs p-centr"  data-toggle="modal" data-target="#geo">
+                (383) 380-22-00
+                <br />
+                <span class="dotted font60 " >Новосибирск</span>
+              </a>
+            </div>
+
+            <div class="row">
+              <nav class="collapse navbar-collapse bs-navbar-collapse" id='q1'  role="navigation">
+                <!-- меню -->
+                <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a href="/oplata.html">ОПЛАТА</a>
+                    </li>
+                    <li>
+                      <a class="hidden-sm" href="/гарантии.html">ГАРАНТИИ</a>
+                    </li>
+                    <li>
+                      <a href="/условия-работы.html">УСЛОВИЯ</a>
+                    </li>
+
+                    <li>
+                      <a href="/услуги.html">УСЛУГИ</a>
+                    </li>
+                    <li>
+                      <a href="/контакты.html">КОНТАКТЫ</a>
+                    </li>
+
+                  </ul>
+                </div>
+                <!-- Телефон  -->
+                <a class="navbar-brand navbar-brand60 pointer city hidden-xs"  data-toggle="modal" data-target="#geo">
+                  (383) 380-22-00
+                  <br />
+                  <span class="dotted font60 " >Новосибирск</span>
+                </a>
+                <div  class="col-lg-offset-1 col-md-2  col-md-offset-1 col-sm-1 col-xs-12 ">
+                  <!-- логин  -->
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a class="pointer" id="login"  data-toggle="modal" data-target="#myModal" >
+                        Вход или
+                        <br />
+                        Регистрация
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- /row --> </div>
+
+          </div>
+        </header>
+
+        <main id="content" class="bs-docs-masthead" role="main">
+          <div class="container"> 
+            <h1>5+ Автомат</h1>
+            <p class="lead">
+              Самый популярный сайт для студентов ВУЗов.
+              <br>
+              Мы используем самые современные технологии при проверке заданий.
+            </p>
+            <p class="lead">
+              <a class="btn btn-outline-inverse btn-lg" href="/заказать-работу.html">Сделать заказ</a>
+              <a class="btn btn-outline-inverse btn-lg" href="/заказать-работу.html">Узнать стоимость</a>
+            </p>
+
+          </div>
+
+        </main>
+
+        <div class="bs-docs-featurette">
+          <div class="container">
+            <h2 class="bs-docs-featurette-title">Предназначен для всех, по всей России.</h2>
+            <p class="lead">
+              5+ Автомат - интуитивно простой сайт и в тоже время мощный помощник, повышающий скорость и облегчающий выполнение студенческих работ.
+            </p>
+            <hr class="half-rule">
+            <p class="lead text-center">Все еще ищете причины чтобы влюбиться в 5+Автомат?</p>
+            <div class="row">
+              <div class="col-sm-4">
+                <h3>Точно в срок</h3>
+                <img class="myimg" id="myimg" alt="время" src="img/time.png">
+                <p>
+                  Нужно выполнить работу за несколько часов или защита через полгода и спешить некуда? Срок выполнения задаете Вы сами. Мы подготовим работу к установленной дате и часасу. Ваша задача – сдать на проверку и получить «отлично»! В случае необходимости, доработки выполняем в кратчайшие сроки.
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <h3>Качественно</h3>
+                <img class="myimg" alt="Качественно" src="img/socialmedia.png">
+                <p>
+                  Наши специалисты, выполнят Ваше задание в соответствие со всеми требованиями и пожеланиями. Готовый проект проходит проверку на антиплагиат. Содержание текста и соответствие требованиям контролируют профессиональные менеджеры. Необходимые корректировки – бесплатно. Мы сопровождаем работу вплоть до защиты. Качественно – это по-нашему!
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <h3>Удобно</h3>
+                <img class="myimg"  alt="Components" src="img/free.png">
+                <p>
+                  Оформляйте задание на сайте, отправляйте на наш электронный ящик, приходите в офис, связывайтесь с консультантом по телефону в любое удобное для Вас время. Оформить, оплатить и получить заказ можно любым удобным для Вас способом, даже не выходя из дома. Вы хотите заглянуть к нам в офис – добро пожаловать! На машине, метро, автобусе, трамвае или пешком: удобно всем.
+                </p>
+              </div>
+            </div>
+            <hr class="half-rule">
+            <p class="lead">
+              5+Автомат всегда открыт для Вас.
+              <br>
+              Наша компания размещается, развивается и поддерживаться ВКонтакте.
+            </p>
+            <a class="btn btn-outline btn-lg" target="_blank" href="http://vk.com/write19454635">Написать нам ВКонтакте</a>
+          </div>
+        </div>
+        <div class="bs-docs-featurette">
+          <div class="container">
+            <h2 class="bs-docs-featurette-title">Сделано 5+Автомат</h2>
+            <p class="lead">
+              Миллионы замечательных проектов по всей России делаются 5+Автомат. Посмотрите примеры в постоянно растущей
+              <a href="getting-started/index.htm#examples">коллекциии работ</a>
+              .
+            </p>
+            <hr class="half-rule">
+
+            <div class="row bs-docs-featured-sites">
+              <div class="col-sm-3">
+                <a title="Диплом" target="_blank" href="/zakazat-diplom.html">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <img class="myimg"  alt="Диплом" src="img/diplom.png"></div> <strong>Дипломный проект</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-sm-3">
+                <a title="Курсовая работа" target="_blank" href="/zakazat-kursovuyu-rabotu.html">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <img class="myimg"  alt="Курсовая работа" src="img/kyrsovaia.png"></div> <strong>Курсовая работа</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-sm-3">
+                <a title="Реферат" target="_blank" href="/zakazat-referat.html">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <img class="myimg"  alt="Реферат" src="img/referat.png"></div>
+                    <strong>Реферат</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-sm-3">
+                <a title="Контрольная работа" target="_blank" href="/zakazat-kontrolnuyu.html">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <img class="myimg"  alt="Контрольная работа" src="img/kontrolinaia.png"></div>
+
+                    <strong>Контрольная работа</strong>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+            <hr class="half-rule">
+            <p class="lead">
+              Ознакомьтесь с множеством видов проектов, выполненняемых с помощью 5+Автомат.
+            </p>
+            <a class="btn btn-outline btn-lg" target="_blank" href="http://expo.getbootstrap.com/">Список проектов</a>
+          </div>
+        </div>
+
+        <footer class="bs-docs-footer" role="contentinfo">
+          <div class="container">
+
+            <p>
+              <a href="/improvement.html">Предложения</a>
+              по улучшению.
+            </p>
+            <ul class="bs-docs-footer-links muted">
+              <li>Теукущая версия v4.1.1</li>
+              <li>·</li>
+
+              <li>
+                <a target="_blank" href="/bootstraptheme.php">Инофрмация студентам</a>
+              </li>
+              <li>·</li>
+              <li>
+                <a href="/about.php">О проекте</a>
+              </li>
+              <li>·</li>
+              <li>
+                <a target="_blank" href="http://blog.getbootstrap.com/">Официальная группа</a>
+              </li>
+              <li>·</li>
+              <li>
+                <a target="_blank" href="https://github.com/twbs/bootstrap/issues?state=open">Вопросы</a>
+              </li>
+              <li>·</li>
+              <li>
+                <a target="_blank" href="https://github.com/twbs/bootstrap/releases">Партнерам</a>
+              </li>
+              <li>·</li>
+              <li>
+                <a target="_blank" href="https://github.com/twbs/bootstrap/releases">Авторам</a>
+                (отправить резюме)
+              </li>
+            </ul>
+            <div class="text-center">
+              Спроектирован и построен с любовью компанией
+              <a target="_blank" href="http://сайтсайтов.рф/">СайтСайтов</a>
+              .
+            </div>
+          </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+      <script src="js/vendor/bootstrap.js"></script>
+
+      <script src="js/plugins.js"></script>
+      <script src="js/main.js"></script>
+
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+</body>
+    </html>

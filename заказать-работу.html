@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+  <![endif]-->
+  <!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8">
+    <![endif]-->
+    <!--[if IE 8]>
+    <html class="no-js lt-ie9">
+      <![endif]-->
+      <!--[if gt IE 8]>
+      <!-->
+      <html class="no-js">
+        <!--<![endif]-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Сделать заказ | Автомат5+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/1.css">
+
+        <!-- Дата -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+ <!-- /Дата -->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script> 
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+ <script src="datepicker-fr.js"></script>
+         
+</head>
+
+<body  class="bs-docs-home">
+
+
+
+
+
+
+
+        <!-- Modal  Login-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content panel panel-primary">
+              <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title panel-title" id="myModalLabel">Вход / Регистрация</h3>
+              </div>
+              <div class="modal-body">
+                <form role="form">
+                  <div class="form-group has-success has-feedback">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Введите email">
+                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-error has-feedback">
+                    <label for="exampleInputPassword1">Пароль</label>
+
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+
+                    <p class="bg-danger padding10">Введен не верный пароль</p>
+                  </div>
+                  <div class="form-group">
+
+                    <a href="">Забыли пароль? Восстановить.</a>
+                  </div>
+
+                  <div class="modal-footer">
+                    <div class="btn-group btn-group-justified">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default">Зарегистрироваться</button>
+                      </div>
+                      <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal  geo-->
+        <div class="modal fade" id="geo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content panel panel-primary">
+              <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title panel-title" id="myModalLabel">Выберите город</h3>
+              </div>
+              <div class="modal-body lead">
+                <a href="">Москва</a>
+                <br />
+                <a href="">Санкт-петербург</a>
+                <br />
+                <a href="">Новосибирск</a>
+                <br />
+              </div>
+
+              <div class="modal-footer">
+                <div class="text-left">
+                  Если вашего города нет в списке, вы можете  связаться с нами
+                  <a href="/контакты.html" target="_blank">удобным для вас способом</a>
+                  .
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="sr-only" href="#content">Перейти к основному содержанию</a>
+
+        <!-- header -->
+        <header id="top" class="navbar navbar-static-top bs-docs-nav" role="banner">
+          <div class="container">
+
+            <!-- Кнопка сворачивания -->
+            <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="menu" >Меню</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+              </button>
+
+              <a class="navbar-brand hidden-xs" href="/">5+ автомат</a>
+              <a class="navbar-brand visible-xs" href="/">А+5</a>
+
+              <!-- Телефон navbar-brand-xs -->
+              <a class="navbar-brand navbar-brand60 pointer city visible-xs navbar-brand-xs p-centr"  data-toggle="modal" data-target="#geo">
+                (383) 380-22-00
+                <br />
+                <span class="dotted font60 " >Новосибирск</span>
+              </a>
+            </div>
+
+            <div class="row">
+              <nav class="collapse navbar-collapse bs-navbar-collapse" id='q1'  role="navigation">
+                <!-- меню -->
+                <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a href="/oplata.html">ОПЛАТА</a>
+                    </li>
+                    <li>
+                      <a class="hidden-sm" href="/гарантии.html">ГАРАНТИИ</a>
+                    </li>
+                    <li>
+                      <a href="/условия-работы.html">УСЛОВИЯ</a>
+                    </li>
+
+                    <li>
+                      <a href="/услуги.html">УСЛУГИ</a>
+                    </li>
+                    <li>
+                      <a href="/контакты.html">КОНТАКТЫ</a>
+                    </li>
+
+                  </ul>
+                </div>
+                <!-- Телефон  -->
+                <a class="navbar-brand navbar-brand60 pointer city hidden-xs"  data-toggle="modal" data-target="#geo">
+                  (383) 380-22-00
+                  <br />
+                  <span id ="gorod" class="dotted font60 " >Новосибирск</span>
+                </a>
+                <div  class="col-lg-offset-1 col-md-2  col-md-offset-1 col-sm-1 col-xs-12 ">
+                  <!-- логин  -->
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a class="pointer" id="login"  data-toggle="modal" data-target="#myModal" >
+                        Вход или
+                        <br />
+                        Регистрация
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- /row --> </div>
+
+          </div>
+        </header>
+
+        <!-- Слайдер -->
+        <div id="content" class="bs-docs-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-7 col-md-8 title-lead">
+                <h1>Сделать заказ</h1>
+                <p>Три простых шага</p>
+              </div>
+
+              <div class="col-sm-5 col-md-4 title-lead">
+                <p class="lead">
+                  <!-- Кнопки "Заказать" -->
+                  <!-- <a class="btn btn-outline-inverse btn-lg  btn-w170 btn-mgb10" href="/заказать-работу.html">Сделать заказ</a>
+                <a class="btn btn-outline-inverse btn-lg pd btn-w170  btn-mgb10" href="/заказать-работу.html">Узнать стоимость</a>
+                -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Тело страницы -->
+      <div class="bs-docs-featurette my-not-padding">
+        <div class="container">
+
+          <!-- Инструкция по оплате -->
+          <h2 class="bs-docs-featurette-title">Шаг № 1</h2>
+          <form action="POST" role="form" >
+
+            <div class="form-group">
+              <label for="check1">Выберите тип работы:(*)</label>
+              <select id="check1" class="form-control" style="" size="27" name="form-tip" multiple="multiple">
+                <option value="диплом">диплом</option>
+                <option value="главы к диплому">главы к диплому</option>
+                <option value="курсовая">курсовая</option>
+                <option value="реферат">реферат</option>
+                <option value="контрольная работа">контрольная работа</option>
+                <option value="самостоятельная работа">самостоятельная работа</option>
+                <option value="бизнес-план ">бизнес-план</option>
+                <option value="билеты к экзаменам (вопросы)">билеты к экзаменам (вопросы)</option>
+                <option value="диссертация">диссертация</option>
+                <option value="доклад">доклад</option>
+                <option value="задачи">задачи</option>
+                <option value="исследование, аналитическая работа">исследование, аналитическая работа</option>
+                <option value="лабораторная работа">лабораторная работа</option>
+                <option value="отчет по практике (дневник)">отчет по практике (дневник)</option>
+                <option value="перевод">перевод</option>
+                <option value="презентация">презентация</option>
+                <option value="рецензия">рецензия</option>
+                <option value="сочинение">сочинение</option>
+                <option value="статья ">статья</option>
+                <option value="тесты">тесты</option>
+                <option value="чертеж">чертеж</option>
+                <option value="шпаргалки">шпаргалки</option>
+                <option value="эссе">эссе</option>
+                <option value="творческая работа">творческая работа</option>
+                <option value="РГЗ">РГЗ</option>
+                <option value="рерайтинг ">рерайтинг</option>
+                <option value="другое">другое</option>
+              </select>
+            </div>
+
+            <div id = "form-other" class="form-group form-horizontal">
+              <label for="other" class="col-sm-2 control-label">Другое</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="other" placeholder="Напишите тип работы" ></div>
+                <br />
+            </div>
+
+            <button type="button" id="page1" class="btn btn-primary">Дальше</button>
+
+            <div class="form-group">
+              <label for="name_institution">Название учебного заведения(*)</label>
+              <input type="text" class="form-control" 
+              id="name_institution" placeholder="Например НГУЭУ">
+            </div>
+
+            <div class="form-group">
+              <label for="item_name">Название предмета (рекомендация: записать без сокращений)(*)</label>
+              <input type="text" class="form-control" 
+              id="item_name" placeholder="Например ЭКОНОМИКА">
+
+            </div>
+
+            <div class="form-group">
+              <label for="name_topic">Тема работы(*)</label>
+              <input type="text" class="form-control" 
+              id="name_topic">
+            </div>
+
+            <div class="form-group">
+              <label for="name_institution">Курс</label>
+              <input type="text" class="form-control" 
+              id="name_institution" placeholder="Например НГУЭУ">
+            </div>
+
+
+            
+            <div class="form-group">
+              <label for="datepicker">Срок сдачи. Выберите в календаре число получения Вами готовой работы. (Желательно выбрать крайний срок сдачи до 24:00 включительно)(*)</label>
+              <input type="text" class="form-control"  id="datepicker">
+            </div>
+            <p>
+              ВАЖНО: Обратите внимание. Работа будет отправлена в течение указанного дня. Если срок известен более точный, его нужно написать в требованиях к работе (ниже). Укажите когда хотите получить готовую работу. К этому времени работа должна быть оплачена полностью. 
+            </p>
+
+
+            <div class="form-group">
+              <label for="name_sources">Объем(*)</label>
+              <input type="text" class="form-control" 
+              id="name_sources" placeholder="Пример: 25 страниц- записка и 8 листов А1 чертежей">
+            </div>
+
+            
+             <div class="form-group">
+              <label for="name_volume">Кол-во источников</label>
+              <input type="text" class="form-control" 
+              id="name_volume" >
+            </div>
+
+            <div class="form-group">
+              <label for="name_requirement">Требования к работе (рекомендация: описать наиболее подробно задание и время отправки Вам готовой работы)</label>
+             
+              <textarea id="name_requirement" class="form-control"  rows="5" cols="50"></textarea>
+              <p>например, требования к оформлению, обязательные к использованию источники литературы
+Прикрепить файлы можно на следующей страницы</p>
+            </div>
+
+            <div class="btn-group">
+  <button type="button" class="btn btn-default">Назад</button>
+  <button type="button" class="btn btn-primary">Дальше</button>
+  
+</div>
+
+
+            
+            
+
+
+
+
+
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Пароль</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></div>
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Проверить меня</label>
+            </div>
+            <button type="submit" class="btn btn-default">Отправить</button>
+          </form>
+
+          <form action="POST">
+            <label for="check1">Выберите тип работы:(*)</label>
+
+          </form>
+        </div>
+      </div>
+
+      <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+
+          <p>
+            <a href="http://bootstrap-3.ru/">Предложения</a>
+            по улучшению.
+          </p>
+          <ul class="bs-docs-footer-links muted">
+            <li>Теукущая версия v4.1.1</li>
+            <li>·</li>
+
+            <li>
+              <a target="_blank" href="/bootstraptheme.php">Инофрмация студентам</a>
+            </li>
+            <li>·</li>
+            <li>
+              <a href="/about.php">О проекте</a>
+            </li>
+            <li>·</li>
+            <li>
+              <a target="_blank" href="http://blog.getbootstrap.com/">Официальная группа</a>
+            </li>
+            <li>·</li>
+            <li>
+              <a target="_blank" href="https://github.com/twbs/bootstrap/issues?state=open">Вопросы</a>
+            </li>
+            <li>·</li>
+            <li>
+              <a target="_blank" href="https://github.com/twbs/bootstrap/releases">Партнерам</a>
+            </li>
+            <li>·</li>
+            <li>
+              <a target="_blank" href="https://github.com/twbs/bootstrap/releases">Авторам</a>
+              (отправить резюме)
+            </li>
+          </ul>
+          <div class="text-center">
+            Спроектирован и построен с любовью компанией
+            <a target="_blank" href="http://сайтсайтов.рф/">СайтСайтов</a>
+            .
+          </div>
+        </div>
+      </footer>
+      <script src="js/vendor/bootstrap.js"></script>
+
+      <script src="js/plugins.js"></script>
+
+    <script src="js/main_order.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+
+    <script src="//api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+    
+
+    <script type="text/javascript">
+    ymaps.ready(init);
+    function init () {
+        var myMap = new ymaps.Map("map", {
+                center: [ 55.033478 , 82.923247],
+                zoom: 15,
+            // Включим поведения по умолчанию (default)
+            // и добавим масштабирование колесом мыши.
+            behaviors:['default', 'scrollZoom']
+            }),  
+
+        // Метка, содержимое балуна которой загружается с помощью AJAX. Новосибирск
+            placemark2 = new ymaps.Placemark([55.033897 , 82.930196], {
+                iconContent: "Автомат5+",            
+            }, {
+                preset: "twirl#blueStretchyIcon",
+                
+            });  
+
+        myMap.geoObjects.add(placemark2); 
+
+        //Управление
+        // В метод add можно передать строковый идентификатор
+        // элемента управления и его параметры.
+        myMap.controls
+            // Кнопка изменения масштаба.
+            .add('zoomControl', { left: 5, top: 5 })
+
+        myMap.controls
+            .add(trafficControl)
+            // В конструкторе элемента управления можно задавать расширенные
+            // параметры, например, тип карты в обзорной карте.
+            .add(new ymaps.control.MiniMap({
+                type: 'yandex#publicMap'
+            }));
+    }
+    </script>
+
+</body>
+  </html>
