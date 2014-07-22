@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7">
   <![endif]-->
@@ -98,11 +98,11 @@
                 <h3 class="modal-title panel-title" id="myModalLabel">Выберите город</h3>
               </div>
               <div class="modal-body lead">
-                <a href="">Москва</a>
+                <a href="" class="choice" data-geo="Moskva">Москва</a>
                 <br />
-                <a href="">Санкт-петербург</a>
+                <a href="" class="choice" data-geo="Piter">Санкт-петербург</a>
                 <br />
-                <a href="">Новосибирск</a>
+                <a href="" class="choice" data-geo="Novosib">Новосибирск</a>
                 <br />
               </div>
 
@@ -138,11 +138,15 @@
               <a class="navbar-brand visible-xs" href="/">А+5</a>
 
               <!-- Телефон navbar-brand-xs -->
+              
               <a class="navbar-brand navbar-brand60 pointer city visible-xs navbar-brand-xs p-centr"  data-toggle="modal" data-target="#geo">
+              <span class="geoI">
                 (383) 380-22-00
                 <br />
                 <span class="dotted font60 " >Новосибирск</span>
+                </span>
               </a>
+              
             </div>
 
             <div class="row">
@@ -171,9 +175,11 @@
                 </div>
                 <!-- Телефон  -->
                 <a class="navbar-brand navbar-brand60 pointer city hidden-xs"  data-toggle="modal" data-target="#geo">
-                  (383) 380-22-00
-                  <br />
-                  <span id ="gorod" class="dotted font60 " >Новосибирск</span>
+                  <span class="geoI">
+                (383) 380-22-00
+                <br />
+                <span class="dotted font60 " >Новосибирск</span>
+                </span>
                 </a>
                 <div  class="col-lg-offset-1 col-md-2  col-md-offset-1 col-sm-1 col-xs-12 ">
                   <!-- логин  -->
@@ -198,6 +204,8 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-7 col-md-8 title-lead">
+              <div id="tyt">tyt</div>
+
                 <h1>Сделать заказ</h1>
                 <p>Три простых шага</p>
               </div>

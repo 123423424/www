@@ -221,3 +221,11 @@ min-width: 220px !important;
 #form-other {
     display: none;
 }
+
+.geo-ip{
+    color: black;
+}
+body {
+    opacity: 0;
+   
+}

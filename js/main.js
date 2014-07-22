@@ -31,15 +31,85 @@ $('#btn-log-close').click(closeLogin);
 
 
 
+// function setCookie (name, value, expires, path, domain, secure) {
+//       document.cookie = name + "=" + escape(value) +
+//         ((expires) ? "; expires=" + expires : "") +
+//         ((path) ? "; path=" + path : "") +
+//         ((domain) ? "; domain=" + domain : "") +
+//         ((secure) ? "; secure" : "");
+// }
 
-// $.ajax({
-// type: "POST",
-// url: "ip.php",
-// data: { name: "John", location: "Boston" }
-// })
-// .done(function( msg ) {
-// 	if (msg == '<div class="red">37.193.135.88</div>')
-// 	 $('#gorod').html('да');
-// 	else $('#gorod').html(msg);
+// //setCookie("ipGeoCookie3", "bar9", "Mon, 01-Jan-2001 00:00:00 GMT", "/");
+// setCookie("ipGeoCookieB", "bbb");
+// myVar = getCookie("ipGeoCookie");
+// $('#coo').html(myVar).css( "color", "red");
 
-// });
+function getCookie(name) {
+	var cookie = " " + document.cookie;
+	var search = " " + name + "=";
+	var setStr = null;
+	var offset = 0;
+	var end = 0;
+	if (cookie.length > 0) {
+		offset = cookie.indexOf(search);
+		if (offset != -1) {
+			offset += search.length;
+			end = cookie.indexOf(";", offset)
+			if (end == -1) {
+				end = cookie.length;
+			}
+			setStr = unescape(cookie.substring(offset, end));
+		}
+	}
+	return(setStr);
+}
+
+
+// Определение города
+var myVar , msg2;
+myVar = getCookie("ipGeoCookie");
+myVar = decodeURIComponent(myVar);
+	//Если нет КУКИ
+if (myVar != "null"){
+	$.ajax({
+	type: "POST",
+	url: "ip/example.php"
+	// ,	data: { name: "Jo2h3n" }
+	})
+	.done(function( msg ) {
+			 msg2 = msg;
+			$('.geoI').html(decodeURIComponent(msg));
+
+			//$('#tyt').html('myVar='+ myVar+'/msg3-null = '+msg2).css( "color", "red");
+	});
+}
+	//Если куки установлена
+else {
+	$('.geoI').html(decodeURIComponent(myVar));	
+ } 
+
+
+//Выбор другого города
+$('.choice') .click(function(event) {	
+	event.preventDefault();
+	  var geo;
+   geo = $( this ).data('geo');
+$.ajax({
+	type: "POST",
+	url: "ip/example.php"
+	 ,	data: { name: geo }
+	})
+	.done(function( msg ) {
+			 msg2 = msg;
+			$('.geoI').html(decodeURIComponent(msg));
+			
+	});
+	$('.close') .click();  
+}); 
+
+
+//Отображение без скачеков
+$(document).ready(function(){ 	
+	//Плавное отображение страницы
+	$('body').animate({opacity: 1},300 );
+});

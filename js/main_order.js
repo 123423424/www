@@ -1,5 +1,5 @@
 
-//При выборе пункта  другое 1
+//При выборе пункта  другое 
 var i , n;
 $("#check1" ).change(function() {
   i = $( "#check1" ).val();
@@ -27,16 +27,7 @@ $("#page1") .click(function() {
 });
 
 
-
-
-
-
-
-
-
-
-
-
+// Календарь
  $(function() {
 $( "#datepicker" ).datepicker({
 showOtherMonths: true,
@@ -44,12 +35,10 @@ selectOtherMonths: true,
 showButtonPanel: true,
  changeMonth: true,
 changeYear: true,
-dateFormat: 'dd.mm.yy',
-
-
+dateFormat: 'dd.mm.yy'
 });
 });
-
+//Формат календаря
 $.datepicker.regional['ru'] = {
   closeText: 'Закрыть',
   prevText: '<Пред',
@@ -70,5 +59,10 @@ $.datepicker.regional['ru'] = {
   yearSuffix: ''
 };
 $.datepicker.setDefaults($.datepicker.regional['ru']);
+
+
+
+
+
 
 
