@@ -225,7 +225,7 @@
 
               <!-- Инструкция по оплате -->
 
-              <form action="POST" class="form-horizontal" role="form" >
+              <form action="POST" class="form-horizontal" role="form" oninput="log(event)" >
                 <!-- Шаг 1 Информация о заказе-->
                 <div class="step1">
                   <h2 class="bs-docs-featurette-title">Шаг 1. Информация о заказе</h2>
@@ -266,7 +266,13 @@
                       </select>
                     </div>
                     <p class="form-mess bg-danger padding10">Вы не указали тип работы</p>
+                    
                   </div>
+                  <p id='check1-info' class="help-block">Если затрудняетесь с определениме типа, выберите пункт "другое" и укажите свой вариант</p>
+
+                  <div id="vis2">
+                    
+                  
 
                   <div id = "form-other" class="form-group">
                     <label for="other" class="col-sm-2 control-label">Другое</label>
@@ -288,19 +294,26 @@
                     <div class="col-sm-10">
                       <input type="text" class="form-control" 
               id="item_name" name="item_name" placeholder="Например ЭКОНОМИКА"></div>
-                    <p class="form-mess bg-danger padding10">Укажите название предмета</p>
-                    <p class="help-block">Рекомендация: Название предмета записать без сокращений</p>
+                    <p id="item_name-mass" class="form-mess bg-danger padding10">Укажите название предмета</p>
+                    
                   </div>
+                  <p id='item_name-info' class="help-block">Рекомендация: Название предмета записать без сокращений</p>
+
+
+                  <div id="vis3"> <!--  /#vis3 -->
+
+                  
 
                   <div class="form-group">
                     <label for="datepicker" class="col-sm-2 control-label">Срок</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control"  id="datepicker" name="datepicker"></div>
                     <p class="form-mess bg-danger padding10">Укажите срок сдачи</p>
-                    <p class="help-block col-sm-offset-2">
+                   
+                  </div>
+                   <p class="help-block col-sm-offset-2">
                       ВАЖНО: Обратите внимание. Работа будет отправлена в течение указанного дня. Если срок известен более точный, его нужно написать в требованиях к работе (ниже). Укажите когда хотите получить готовую работу.
                     </p>
-                  </div>
 
                   <div class="form-group">
                     <label for="name_sources" class="col-sm-2 control-label">Объем</label>
@@ -322,17 +335,21 @@
                   <div id="file-group">
 
                   <div class="form-group">
-                    <label for="exampleInputFile" class="col-sm-2" >Фаил</label>
+                    <label for="exampleInputFile0" class="col-sm-2" >Фаил</label>
                     <div class="col-sm-6">
-                      <input type="file" id="exampleInputFile" name="exampleInputFile[0]" class="exampleInputFile btn btn-default"></div>
+                      <input type="file" id="exampleInputFile0" name="exampleInputFile[0]" class="exampleInputFile btn btn-default"></div>
                     <div class="col-sm-4">
                       <button type="button" class="btn btn-success file-add"> <strong>+</strong>
                         Добавить ещё
                       </button>
                     </div>
                   </div>
-
                   </div>
+                  </div> <!-- /#vis3 -->
+
+                  </div> <!-- /#vis2 -->
+
+
 
 
 

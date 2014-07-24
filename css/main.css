@@ -246,3 +246,7 @@ body {
 .margin-bottom-not{
     margin-bottom: 0;
 }
+
+#vis2, #vis3{
+    display: none;
+}
