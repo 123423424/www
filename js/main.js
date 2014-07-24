@@ -70,7 +70,7 @@ var myVar , msg2;
 myVar = getCookie("ipGeoCookie");
 myVar = decodeURIComponent(myVar);
 	//Если нет КУКИ
-if (myVar != "null"){
+if (myVar == "null"){
 	$.ajax({
 	type: "POST",
 	url: "ip/example.php"
@@ -87,7 +87,6 @@ if (myVar != "null"){
 else {
 	$('.geoI').html(decodeURIComponent(myVar));	
  } 
-
 
 //Выбор другого города
 $('.choice') .click(function(event) {	

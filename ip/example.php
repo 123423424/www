@@ -1,6 +1,7 @@
 <?php
-
-      $siti = $_POST['name']; 
+        
+      $siti = $_POST['name'];     
+      $siti = preg_replace ("/[^a-zA-Z]/","", $siti ); // очистить почту  числа   
       if (isset($siti)) {        
             switch ($siti) {
             case "Moskva":
@@ -13,21 +14,14 @@
                 $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосибирск</span>";
                 break;
              default:
-               $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосибирск</span>";
+               $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосиб2ирск</span>";
         }
             //Поставить куки
             setcookie("ipGeoCookie", rawUrlEncode($name_echo) , time()+(60*60*24*365), "/");                
             echo $name_echo;
             die(); 
       } 
-      
-    
-    
-
-  
-  
-  
-
+//Удалить КУКИ
 //setcookie("ipGeoCookie", '', time()-(60*60*24*365), "/"); die(); 
 
 if (isset($_COOKIE['ipGeoCookie'])) {
@@ -64,10 +58,6 @@ $data = $gb->getRecord('46.46.128.0'); //Москва
  $ip=$_SERVER['REMOTE_ADDR']; 
  $data = $gb->getRecord($ip);
 
-
-
-
-  $data = $gb->getRecord($ip);
   //$data = $gb->getRecord('89.113.72.0'); //Питер
   
 

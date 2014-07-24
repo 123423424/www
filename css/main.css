@@ -216,7 +216,8 @@ min-width: 220px !important;
     margin-bottom: 10px
 }
 #check1{
-    font-size: 120%;
+    /*font-size: 120%;*/
+    font-weight: bold;
 }
 #form-other {
     display: none;
@@ -228,4 +229,20 @@ min-width: 220px !important;
 body {
     opacity: 0;
    
+}
+
+.form-mess{
+    display: none;    
+}
+
+.exampleInputFile{  
+    margin: 0 auto;
+
+}
+.step2{
+    display: none;
+}
+
+.margin-bottom-not{
+    margin-bottom: 0;
 }
