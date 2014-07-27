@@ -223,6 +223,39 @@
             <div  class="col-xs-2 "></div>
             <div  class="col-xs-8 ">
 
+
+
+
+             <!-- Работа с файлами -->
+                      <form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+          <div id="drop">            
+            <input type="file" name="upl" multiple />
+          </div>
+
+          <ul>
+            <!-- The file uploads will be shown here -->
+          </ul>
+
+        </form>
+        <div id="info-intro"></div>
+
+<!-- JavaScript Includes -->
+    
+    <script src="file/assets/js/jquery.knob.js"></script>
+
+    <!-- jQuery File Upload Dependencies -->
+    <script src="file/assets/js/jquery.ui.widget.js"></script>
+    <script src="file/assets/js/jquery.iframe-transport.js"></script>
+    <script src="file/assets/js/jquery.fileupload.js"></script>
+    
+    <!-- Our main JS file -->
+    <script src="file/assets/js/script.js"></script>
+
+ <!-- /Работа с файлами -->
+
+
+
+
               <!-- Инструкция по оплате -->
 
               <form action="POST" class="form-horizontal" role="form" oninput="log(event)" >
@@ -344,6 +377,9 @@
                       </button>
                     </div>
                   </div>
+
+     
+
                   </div>
                   </div> <!-- /#vis3 -->
 
