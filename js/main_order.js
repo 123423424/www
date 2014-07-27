@@ -33,6 +33,9 @@ $.datepicker.regional['ru'] = {
 };
 $.datepicker.setDefaults($.datepicker.regional['ru']);
 
+//Проверяет ячейку на пустату при нажатии кнопки далее. Если ячейка пуста сообщает об этом. 
+//nId - id устанавливаемого класса
+//nexP - возвращеное значение для общей проверки
 function checkId (nId,nexP) {  
   if (nId.val() == "") {  
     nId.parents(".form-group").addClass("has-error")
@@ -42,6 +45,8 @@ function checkId (nId,nexP) {
     return nexP;
   }
 
+//Устанавливает сшушателя, при изменении ячейки, очищает ячейку от сообщания об ошибки, если ошибка исправленна
+//nId - Id ячейки, которую нужно очистить
 function cleanId (nId) {  
      nId.change(function() {
       nId.parents(".form-group").removeClass("has-error")
@@ -49,6 +54,8 @@ function cleanId (nId) {
     });
   }  
 
+//Функция установленна на все форму, при изменении
+//значения в двух ячейках , отображает 3 часть первого шага
 function log(event) {
   if (  ($( "#name_topic" ).val() !='') && ($( "#item_name" ).val()!='' )) {    
   $("#vis3" ).show("slow");
@@ -57,8 +64,6 @@ function log(event) {
   }
   
 }
-
-
 
 //Первый шаг: установка слушателя изменений
 cleanId($("#check1"))
@@ -69,7 +74,7 @@ cleanId($("#name_sources"))
 
 
 
-//При выборе пункта  "Диплом" 
+//При изменении первого пуформы
 $("#check1" ).change(function() {
   $("#check1-info" ).hide("slow");
   $("#vis2" ).show("slow");
@@ -89,11 +94,12 @@ $("#check1" ).change(function() {
        $("#item_name-mass" ) .html('Укажите название предмета');  
     }
 
+    //При выборе "другое" или "" (отсутствие выбора)
   if (i=='другое') {
       n = 1;
       $("#form-other" ) .show("slow");}
   else if (i=='') {
-      $("#vis2" ).hide("slow");
+      $("#vis2" ).hide("slow"); //скрыть вторую часть
       $( "#form-other" ) .hide("slow");
             n = 0;}
     else {
@@ -104,20 +110,7 @@ $("#check1" ).change(function() {
       }  
 });
 
-$("#name_topic" ).change(function() {
-  if (  ($( "#name_topic" ).val() !='') && ($( "#item_name" ).val()!='' )) {
-  $("#vis3" ).show("slow");
-  }
-});
-
-$("#item_name" ).change(function() {
-  if (  ($( "#name_topic" ).val() !='') && ($( "#item_name" ).val()!='' )) {
-  $("#vis3" ).show("slow");
-  }
-});
-
-
-//Клик по кнопки "дальше" Шаг1
+//Клик по кнопки "дальше" Шаг1 //Проверки для каждой части
 $("#page1") .click(function() {
   var nexPage = 1;
   if ($("#check1").val() == ""){
@@ -185,13 +178,7 @@ $( document ).on( "click", ".file-add", function() {
 
     });
 
-$(document).on("change", "input .exampleInputFile", function(event){
-  var file = event.target.files[0];  
-  if (file.size > 1){
-    alert('rrrr')
-  }
-  
-});
+
 
 
 
