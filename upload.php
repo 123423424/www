@@ -26,7 +26,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
      
     //Изменить символы
     $cyrillicTxt=$someText;
-$cyrillicPattern  = array('а','б','в','г','д','e', 'ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у', 
+$cyrillicPattern  = array('а','б','в','г','д','е', 'ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у', 
         'ф','х','ц','ч','ш','щ','ъ','ь', 'э', 'ы', 'ю','я','А','Б','В','Г','Д','Е', 'Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У',
         'Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ь', 'Э', 'Ы', 'Ю','Я' );
 $latinPattern = array( 'a','b','v','g','d','e','jo','zh','z','i','y','k','l','m','n','o','p','r','s','t','u',
@@ -38,26 +38,13 @@ $someText = str_replace($cyrillicPattern, $latinPattern, $cyrillicTxt);
 
 $rand = rand(1000000, 9999999);
 
-$n_cooc = 1;
-$n_cooc = 'kk='.$_COOKIE['cookie'].'=ss3s';
-/*
-function ch_cooc ($n_cooc){
-    if (isset($_COOKIE['cookie..'.$n_cooc])){
-        $n_cooc.='ddd';
-    $n_cooc++;    
-    ch_cooc ($n_cooc);
-    } else {return $n_cooc;}
-}
-$n_cooc = ch_cooc ($n_cooc);
-*/
 
-setcookie('cookie', $n_cooc.rawUrlEncode($rand), time()+(60*60*24),  '/');   
-$n_cooc = 'kk='.$_COOKIE['cookie'].'=ss3s';
-setcookie('cookie', $n_cooc.rawUrlEncode($rand), time()+(60*60*24),  '/');
+$n_cooc = count($_COOKIE['cookieN']);
+setcookie('cookieN['.$n_cooc.']', $rand.'-'.$someText, time()+(60*60*2),  '/'); 
 
 
-	if(move_uploaded_file($_FILES['upl']['tmp_name'], 'file/uploads/'.$someText)){
-		echo '{"status":"success"}';
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], 'file/uploads/'.$rand.'-'.$someText)){
+		echo '{"status":"success" , "param":"new_name" }';
 		exit;
 	}
 }
