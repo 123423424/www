@@ -1,7 +1,7 @@
 <?php
 //setlocale(LC_ALL, 'ru_RU.UTF-8');
-/*$someText = $_POST['name'];
-
+$someText = $_POST['name'];
+$newname = $_POST['new2name'];
 
 $someText = preg_replace('/[^ a-zA-Z0-9А-Яа-яЁё\._-]/iu', '', $someText); 
 //$newname = preg_replace('/[^ a-zA-Z0-9А-Яа-яЁё\._-]/iu', '', $newname); 
@@ -22,24 +22,20 @@ $latinPattern = array( 'a','b','v','g','d','e','jo','zh','z','i','y','k','l','m'
         'F' ,'H' ,'Ts' ,'Ch','Sh','Sht', '', '`', 'Je' ,'Ji' ,'Yu' ,'Ya' );
 $newname = 0;
 $someText = str_replace($cyrillicPattern, $latinPattern, $cyrillicTxt);
-*/
+
 /*
 if (isset($_COOKIE[$someText])){
     
 }
 */
 
-
-$n_cooc = count($_COOKIE['cookieN']);
-
-//setcookie('cookieV', 'GOOOOD2', time()+(60*60*24),  '/');  
-//setcookie('cookieV2', 'GOOOOD3', time()+(60*60*24),  '/');
-$newname = $_COOKIE['cookieN'][$n_cooc-1];
+$newname = $_COOKIE['cookie'];
 
 
-
-
+foreach($_COOKIE['cookie'] as $name=>$val) {
+        $newname =  "$name = $value<br>\n";
+    }
     
 
 
-echo '='.$newname.'=';
+echo $someText.'='.$newname;

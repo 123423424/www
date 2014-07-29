@@ -107,8 +107,7 @@ $(function(){
                // data.context.removeClass('working');
                 $.ajax({
                 	type: "POST",
-                	url: "file/name.php",
-                    headers: {'cookie': document.cookie},	
+                	url: "file/name.php",	
                     data: { name: data.files[0].name , new2name: nfile }
                 	})
                 	.done(function( msg ) {
@@ -126,7 +125,6 @@ $(function(){
         }
 
     });
-
 
 
     // Prevent the default action when a file is dropped on the window
