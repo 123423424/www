@@ -1,5 +1,6 @@
 var numberFile=0;
 var chFile = 0;
+var chMess = 0;
 
 // использование Math.round() даст неравномерное распределение!
 function getRandomInt()
@@ -10,6 +11,7 @@ function getRandomInt()
 $(function(){
 
     var ul = $('#upload ul');
+    ul.addClass('list-unstyled');
 
     $('#drop a').click(function(){
         // Simulate a click on the file input button
@@ -29,40 +31,46 @@ $(function(){
         add: function (e, data) {
             numberFile++;
 
-           
-           if(numberFile > 20){
-                
+//Очистка сообщений об ошибки и блока
+            if (chMess ==1) {
+                 $('#info-intro').hide("slow").html('');
+                 chMess =0;
+            }
+
+ // Выводим  сообщение о допустимых объема файла
+            if(data.files[0].size > 19000000){ 
+                chMess =1;
+                $('#info-intro').append("<p class='bg-danger padding10'>Нельзя загружать файлы больше 19MB. Воспользуйтесь сервисами: <a href='https://disk.yandex.ru' target='_blanc' >Яндекс.Диск </a> или  <a href='http://files.mail.ru/' target='_blanc' >Файлы Mail.Ru  </a>. После этого напишите ссылку в требованиях к проекту. Спасибо.</p>").show("slow");
+                }
+//Максимальное допустимое количество файлов chMess
+           if(numberFile > 20){  
+                chMess =1;             
                 if (chFile==0) {
-                                $('#info-intro').append("<div id='info-file'>Максимальное количество файлов равно 20. <br /> Попробуйте заархивировать файлы</div>");
+                                $('#info-intro').append("<p class='bg-danger padding10'>Максимальное количество файлов равно 20. <br /> Попробуйте заархивировать файлы</p>").show("slow");
+                                //$('#info-intro').html("slow");
                                 chFile = 1;
                             }
-                return; }
+                 } // else { $('#info-intro').hide("slow"); }
 
-            
-
-
-            //alert(data.files[0].name)    ;
-                    // Выводим сообщение о допустимых типах файлов
+// Выводим сообщение о допустимых типах файлов
             if(data.files[0]['type'] == 'application/octet-stream' || data.files[0]['type'] == ''){ 
-                $('#info-intro').append("<div id='info-file'>Нельзя загружать файлы с этим расширением. Воспользуйтесь архиватором RAR: <a href='http://www.win-rar.ru/download/winrar/' target='_blanc' >Скачать</a></div>");
-                return; }
+                chMess =1;
+                $('#info-intro').append("<p class='bg-danger padding10'>Нельзя загружать файлы с этим расширением. Воспользуйтесь архиватором RAR: <a href='http://www.win-rar.ru/download/winrar/' target='_blanc' >Скачать</a></p>").show("slow");
+                 }
+               if (chMess == 1 ) { return;}
 
- // Выводим сообщение о допустимых объема файла
-            if(data.files[0].size > 19000000){ 
-                $('#info-intro').append("<div id='info-file'>Нельзя загружать файлы больше 19MB. Воспользуйтесь сервисами: <a href='https://disk.yandex.ru' target='_blanc' >Яндекс.Диск </a> или  <a href='http://files.mail.ru/' target='_blanc' >Файлы Mail.Ru  </a>. И напишите ссылку в требованиях к проекту. Спасибо.</div>");
-                return; }
 
-            var tpl = $('<li class="working"><input type="text" value="0" data-width="48" data-height="48"'+
-                ' data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" /><p></p><span></span><div class="proc">Процес</div></li>');
+
+
+            var tpl = $('<li class="working">                <div class="row">                  <div class="col-sm-6">                    <p></p>                    <span></span>                </div>                  <div class="col-sm-6">                    <div class="progress progress-striped active">Процес </div>                  </div>                </div>              </li>');
 
             // Append the file name and file size
-            tpl.find('p').text(data.files[0].name)
-                         .append('<i>' + (data.files[0].size) + '<strong></strong></i><br />');
+            tpl.find('p').text(data.files[0].name);
            
                          
             var z = tpl.find('p');
 
-            // Add the HTML to the UL element
+            // Add  the HTML to the UL element
             data.context = tpl.appendTo(ul);
 
             // Initialize the knob plugin
@@ -94,36 +102,35 @@ $(function(){
 
             // Update the hidden input field and trigger a change
             // so that the jQuery knob plugin knows to update the dial
-            data.context.find('input').val(progress).change();
-           data.context.find('.proc').html(progress+'%').change(); 
+            data.context.find('input').val(progress).change();  // progress+'%'
+           data.context.find('.progress').html(
+            '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="'+progress+'" aria-valuemin="0" aria-valuemax="100" style="width: '+progress+'%;">'+progress+'%</div>').change(); 
             data.context.find('input').html(data.loaded)
            
 
             if(progress == 100){
                 var nfile = getRandomInt();
+                data.context.find('.progress').removeClass("active progress-striped");
            // var allname = nfile+'-'+ data.files[0].name;
            // alert (allname);
 
-               // data.context.removeClass('working');
-                $.ajax({
-                	type: "POST",
-                	url: "file/name.php",
-                    headers: {'cookie': document.cookie},	
-                    data: { name: data.files[0].name , new2name: nfile }
-                	})
-                	.done(function( msg ) {
-                	                   			 
-                			$('#fn').html(msg); //В                                      
-                            data.context.append('<strong class ="syper">'+msg+'</strong>');    			
-                	});
-                 
+                             
             }
         },
 
         fail:function(e, data){
             // Something has gone wrong!
             data.context.addClass('error');
-        }
+        },
+        success: function() {
+            console.log(arguments);
+           var cart = JSON.parse ( arguments[0] );
+           $('#tyt').append(cart.param);
+
+
+        //alert( cart.param);
+
+    }
 
     });
 
@@ -152,3 +159,17 @@ $(function(){
     }
 
 });
+
+
+
+/*    //Пояснения которое поялвяется для прекрепления файлов
+    if (i=='диплом' || i=='главы к диплому') {
+      $("file-msg2" ) .html('<p class="help-block col-sm-offset-2"> ВАЖНО: Чтобы все малейшие требования были учтены, для выполнения дипломной работы желательно прикрепить всю имеющуюся информация которая есть (методички и план диплома, если он уже согласованны с преподавателем.)</p>');
+    }
+    else if (i=='курсовая') {
+      $("file-msg2" ) .html('<p class="help-block col-sm-offset-2"> ВАЖНО: Чтобы все малейшие требования были учтены, для выполнения курсовой работы желательно прикрепить всю имеющуюся информация (методичка) которая есть </p>');
+    }
+     else {
+      $("file-msg2" ) .html('');
+     }
+*/

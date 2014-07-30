@@ -65,6 +65,16 @@ function log(event) {
   
 }
 
+
+$("#datepicker" ).change(function() {
+  if ($( "#datepicker" ).val() !=''){
+  $("#datepicker-info").hide("slow");
+  }
+
+
+});
+
+
 //Первый шаг: установка слушателя изменений
 cleanId($("#check1"))
 cleanId($("#name_topic"))
@@ -93,6 +103,17 @@ $("#check1" ).change(function() {
        $("#item_name-info" ) .html('Рекомендация: Название предмета записать без сокращений'); 
        $("#item_name-mass" ) .html('Укажите название предмета');  
     }
+
+ //Пояснения которое поялвяется для прекрепления файлов
+    if (i=='диплом' || i=='главы к диплому') {
+      $("#file-msg2" ) .html('<p class="help-block col-sm-offset-2"> ВАЖНО: Чтобы все малейшие требования были учтены, для выполнения дипломной работы желательно прикрепить всю имеющуюся информация которая есть (методички и план диплома, если он уже согласованны с преподавателем.)</p>');
+    }
+    else if (i=='курсовая') {
+      $("#file-msg2" ) .html('<p class="help-block col-sm-offset-2"> ВАЖНО: Чтобы все малейшие требования были учтены, для выполнения курсовой работы желательно прикрепить всю имеющуюся информация (методичк и т.д.) которая есть. </p>');
+    }
+     else {
+      $("#file-msg2" ) .html('');
+     }
 
     //При выборе "другое" или "" (отсутствие выбора)
   if (i=='другое') {
@@ -179,11 +200,23 @@ $( document ).on( "click", ".file-add", function() {
     });
 
 
+$("#upload").appendTo("#file-group");
 
 
-
-
-
+$(document).ready(function() {
+      $('#name_mail').blur(function() {
+        if($(this).val() != '') {
+          var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+          if(pattern.test($(this).val())){            
+            $('#name_mail_name-mass').hide("slow");
+          } else {
+            $('#name_mail_name-mass').html('Проверьте и укажите точный Ваш email').show("slow");
+          }
+        } else {
+          $('#name_mail_name-mass').html('Поле email не должно быть пустым').show("slow");          
+        }
+      });
+    });
 
 
 

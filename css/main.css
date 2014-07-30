@@ -248,5 +248,13 @@ body {
 }
 
 #vis2, #vis3{
-    //display: none;
+    display: none;
+}
+
+.no-viw{
+    display: none;
+}
+
+#info-intro{
+    display: none;
 }

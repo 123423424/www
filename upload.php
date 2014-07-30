@@ -1,5 +1,5 @@
 <?php
-//sleep(5);
+//sleep(2);
 
 if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
     
@@ -37,15 +37,14 @@ $latinPattern = array( 'a','b','v','g','d','e','jo','zh','z','i','y','k','l','m'
 $someText = str_replace($cyrillicPattern, $latinPattern, $cyrillicTxt);
 
 $rand = rand(1000000, 9999999);
+$name_file = $rand.'-'.$someText;
 
-
-$n_cooc = count($_COOKIE['cookieN']);
-setcookie('cookieN['.$n_cooc.']', $rand.'-'.$someText, time()+(60*60*2),  '/'); 
-
-
-	if(move_uploaded_file($_FILES['upl']['tmp_name'], 'file/uploads/'.$rand.'-'.$someText)){
-		echo '{"status":"success" , "param":"new_name" }';
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], 'file/uploads/'.$name_file)){
+	
+     //  rename('file/uploads/'.$name_file, 'file/uploads2/'.$name_file)
+		echo '{"status":"success" , "param":"'.$name_file.'" }';
 		exit;
+       
 	}
 }
 

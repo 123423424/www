@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/1.css">
+        <?php echo ($page == 'заказать-работу.html') ? '<link rel="stylesheet" href="css/order.css">' : ""; ?>
 
         <!-- Дата -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">

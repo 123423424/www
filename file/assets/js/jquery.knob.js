@@ -148,16 +148,16 @@
 
             (!this.o.displayInput) && this.$.hide();
 
-            this.$c = $('<canvas width="' +
+           /* this.$c = $('<canvas  width="' +
                             this.o.width + 'px" height="' +
-                            this.o.height + 'px"></canvas>');
+                            this.o.height + 'px"></canvas>');*/
             this.c = this.$c[0].getContext("2d");
 
-            this.$
-                .wrap($('<div style="' + (this.o.inline ? 'display:inline;' : '') +
+          /*  this.$
+                .wrap($('<div clsss="no-viw" style="' + (this.o.inline ? 'display:inline;' : '') +
                         'width:' + this.o.width + 'px;height:' +
                         this.o.height + 'px;"></div>'))
-                .before(this.$c);
+                .before(this.$c); */
 
             if (this.v instanceof Object) {
                 this.cv = {};
