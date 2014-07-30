@@ -14,8 +14,8 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
         
         
         $sizeText = $_FILES['upl']['size'];
-  if($sizeText > 1900000 ){
-		echo '{"status":"error"}';
+  if($sizeText > 19000000){
+		echo '{"status":"error", "infoError":"yes", "nameEror":"big-'.$sizeText.'"}';
 		exit;}
     
     //Проблема денвера
@@ -48,5 +48,5 @@ $name_file = $rand.'-'.$someText;
 	}
 }
 
-echo '{"status":"error"}';
+echo '{"status":"error", "infoError":"yes", "nameEror":"end-'.$_FILES['upl']['tmp_name'].'"}';
 exit;

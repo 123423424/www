@@ -46,7 +46,7 @@
         <div id="info-intro"></div>
         
       </form>
-      
+         
 
       <!-- JavaScript Includes -->
 
@@ -64,7 +64,7 @@
 
       <!-- Инструкция по оплате -->
 
-      <form action="POST" class="form-horizontal" role="form" oninput="log(event)" >
+      <form action="upload.php" method="post" class="form-horizontal" role="form" oninput="log(event)" >
         <!-- Шаг 1 Информация о заказе-->
         <div class="step1">
           <h2 class="bs-docs-featurette-title">Шаг 1. Информация о заказе</h2>

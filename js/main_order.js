@@ -86,13 +86,14 @@ cleanId($("#name_sources"))
 
 //При изменении первого пуформы
 $("#check1" ).change(function() {
+  var ncoll;
   $("#check1-info" ).hide("slow");
   $("#vis2" ).show("slow");
      
   i = $( "#check1" ).val();
   //Замена "предмета" на "кафедру"
   if (i=='диплом' || i=='главы к диплому') {
-      n = 1;
+      ncoll = 1;
       $("label[for=item_name]" ) .html('Кафедра');
       $("#item_name-info" ) .html('Напишите название кафедры, по которой выпускаетесь.<br /> Рекомендация: Название кафедры записать без сокращений');
       $("#item_name-mass" ) .html('Укажите название кафедры');
@@ -117,16 +118,16 @@ $("#check1" ).change(function() {
 
     //При выборе "другое" или "" (отсутствие выбора)
   if (i=='другое') {
-      n = 1;
+      ncoll = 1;
       $("#form-other" ) .show("slow");}
   else if (i=='') {
       $("#vis2" ).hide("slow"); //скрыть вторую часть
       $( "#form-other" ) .hide("slow");
-            n = 0;}
+            ncoll = 0;}
     else {
-      if (n == 1){
+      if (ncoll == 1){
             $( "#form-other" ) .hide("slow");
-            n = 0;
+            ncoll = 0;
           }
       }  
 });

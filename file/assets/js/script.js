@@ -53,7 +53,7 @@ $(function(){
                  } // else { $('#info-intro').hide("slow"); }
 
 // Выводим сообщение о допустимых типах файлов
-            if(data.files[0]['type'] == 'application/octet-stream' || data.files[0]['type'] == ''){ 
+            if(data.files[0]['type'] == 'application/octet-stream'){ 
                 chMess =1;
                 $('#info-intro').append("<p class='bg-danger padding10'>Нельзя загружать файлы с этим расширением. Воспользуйтесь архиватором RAR: <a href='http://www.win-rar.ru/download/winrar/' target='_blanc' >Скачать</a></p>").show("slow");
                  }
@@ -62,7 +62,7 @@ $(function(){
 
 
 
-            var tpl = $('<li class="working">                <div class="row">                  <div class="col-sm-6">                    <p></p>                    <span></span>                </div>                  <div class="col-sm-6">                    <div class="progress progress-striped active">Процес </div>                  </div>                </div>              </li>');
+            var tpl = $('<li class="working">  <div class="important-file"></div>               <div class="row">                  <div class="col-sm-6">                    <p></p>                    <span></span>                </div>                  <div class="col-sm-6">                    <div class="progress progress-striped active">Процес </div>                  </div>                </div>              </li>');
 
             // Append the file name and file size
             tpl.find('p').text(data.files[0].name);
@@ -127,6 +127,16 @@ $(function(){
            var cart = JSON.parse ( arguments[0] );
            $('#tyt').append(cart.param);
 
+           if (cart.infoError =='yes') {
+           var fileNameCut;
+           fileNameCut = $(this).find('p').text();
+            console.log(fileNameCut);
+
+            $(this).html('<p class="form-mess bg-danger padding10"   style="display: block;">К сожалению,  фаил '+fileNameCut+' не получилось загрузить. Не волнуйтесь. Отправьте его на нашу почту 3802200@mail.ru . В теме напишите код ошибки:' + cart.nameEror +' и Ваш контатный телефон. <br /> Или воспользуйтесь сервисами: <a href="https://disk.yandex.ru" target="_blanc" >Яндекс.Диск </a> либо  <a href="http://files.mail.ru/" target="_blanc" >Файлы Mail.Ru  </a>. После этого напишите ссылку в требованиях к проекту. Спасибо.</p>');
+
+       }
+            
+ 
 
         //alert( cart.param);
 
