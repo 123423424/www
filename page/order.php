@@ -169,6 +169,12 @@
                  
                 </div>
               </div>
+
+<!-- Конопка дальше к шагу 2 -->
+          <div class="btn-group">
+            <button type="button" id="page1" class="btn btn-primary">Дальше</button>
+          </div>
+              
               <div id="file-msg2">                 
               </div>
               <div id="file-group">
@@ -177,10 +183,7 @@
             <!-- /#vis3 --> </div>
           <!-- /#vis2 -->
 
-          <!-- Конопка дальше к шагу 2 -->
-          <div class="btn-group">
-            <button type="button" id="page1" class="btn btn-primary">Дальше</button>
-          </div>
+          
 
         </div>
         <!-- Шаг 2 -->
