@@ -268,6 +268,7 @@
 <br />
 </div>
 
+<!-- Валидация телефона -->
 <script type="text/javascript" src="js/jquery.maskedinput-1.3.1.min_.js"></script>
 <script type="text/javascript">// <![CDATA[
 jQuery(function($) {
@@ -276,6 +277,7 @@ jQuery(function($) {
     
    });
 // ]]&gt;</script>  
+<!-- /Валидация телефона -->
 
 <?php    
     include "foot_part.php"; // это подключит футерк
