@@ -51,13 +51,35 @@ body .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:
 .name-mess{
 	font-weight: bold;
 }
-.dialogue{
-	border:1px #ddd solid;
-    border-radius: 4px;
-   padding: 20px;
-   height:500px;
-   overflow: auto;
+.dialogue  {
+	//height:300px;
+	overflow: auto;
+	
+}
+
+.dial {
+	width: 95%;
 }
 .ajax-exmpl{
 	display: none;
+}
+
+#bt-add_mess{
+	display: none;
+}
+
+  .scroll-pane{
+    height: 300px;
+    //width: 435px;
+    padding-top: 0;
+    padding-right: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+    margin-top: 20px;
+    font-size: 1.1em; 
+  }
+
+.Chat{
+	opacity: 0;
+	
 }

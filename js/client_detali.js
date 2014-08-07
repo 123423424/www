@@ -41,32 +41,56 @@ $('#collapseOne').on('hide.bs.collapse', function () {
 $('.dial').append('<hr />');
 
 
-//$(".dialogue").scrollTop(500);
-
-// установим обработчик события scroll, элементу с идентификатором foo
-var mz=$(".ajax-exmpl");
-
-$('.dialogue').scroll(function(){
-	if ($(".dialogue").scrollTop() == 0){
-		mz.clone().prependTo(".dialogue") .show("slow");
-		$chScrollPositions =  $('#scroll-id').offset().top;
-		$(".dialogue").scrollTo($chScrollPositions);  alert($chScrollPositions);
+//$(".jspContainer").scrollTop(500);
 
 
+// Загрузка 10 диалогов
+var uploadDialog=1;
+var uploadBatt=1;
+$('.scroll-pane').scroll(function(){
+	if ($(".scroll-pane").scrollTop() == 0){
+		
+		//alert('ddd');
+		if (uploadBatt !=1){$("#bt-add_mess").prependTo("#add-mess_bl").show("slow"); 	}	
+		//alert('ddd2');
+		setTimeout(function() {
+			uploadBatt++;
+			//Показать чат, сделанно плавно, т.к. вначеле с первого диалога нужно переместить в нижний диалог
+			$('.Chat').animate({opacity: 1},300 );			
+		}, 600); 
 	}
+});
 
+//Приссоединение диалога
+$("#bt-add_mess").click(function() {
+		$(".ajax-exmpl").clone().find(".name-mess").html(uploadDialog+' диалог.').end().prependTo("#add-mess_bl").show("slow").removeClass('ajax-exmpl');
+		uploadDialog++;
+		$("#scroll-id").trigger('click');
+	//alert('ddd');
 
-
+		//window.location = '#top5';	
+		
 });
 
 
 
+}); //Конец (document).ready
+
+/*
+window.addEvent('domready', function() {
+		new ScrollControl($('contentcontainer'), {'createControls': true});
+	});
+
+
+//Функция плавной перемотки - не работает
+$(function(){
+   $('a[href^="#"]').click(function(){     		
+        var target1 = $(this).attr('id');
+        $('html, body').animate({scrollTop: $(target1).offset().top} , 18000);
+       alert('sss');
+        return false; 
+   }); 
 });
-
-
-
-
-
-
+*/
 
  
