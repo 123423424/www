@@ -1,0 +1,63 @@
+.bg-red{
+	 background-color: Crimson;
+}
+nav{
+	text-transform: uppercase;
+}
+
+.bg-blue{
+	 background-color: SteelBlue;
+}
+
+.h90{
+	height: 90px;
+}
+
+.p-top20{
+    padding-top: 20px !important;
+}
+.f-size30{
+	font-size:30px; 
+
+}
+
+.collor-mess{
+	color: Goldenrod;
+}
+
+#orders tbody tr {
+	cursor: pointer;
+}
+
+
+#order-panel{
+	cursor: pointer;
+
+}
+
+.bs-docs-featurette {
+	padding-top:0;
+}
+.mg-bott{
+	margin-bottom: 20px;
+}
+
+body .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active{
+ 	 background-color: rgb(65, 150, 65);
+ 	color: inherit;
+ text-shadow:none; 
+ border-color:#fff}
+
+.name-mess{
+	font-weight: bold;
+}
+.dialogue{
+	border:1px #ddd solid;
+    border-radius: 4px;
+   padding: 20px;
+   height:500px;
+   overflow: auto;
+}
+.ajax-exmpl{
+	display: none;
+}

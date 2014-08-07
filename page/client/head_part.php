@@ -1,5 +1,5 @@
 <?php
-	defined('CONSTANT5A') or die();  
+	defined('CONSTANT5A') or die();  $_SERVER['SERVER_NAME']
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -19,25 +19,33 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Сделать заказ | Автомат5+</title>
+        <title> <?=$nomer_order?>  Мои проекты | Автомат5+</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/1.css">
-        <?php echo ($page == 'заказать-работу.html') ? '<link rel="stylesheet" href="css/order.css">' : ""; ?>
+        <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/bootstrap.css">
+        <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/main.css">
+
+        <!-- Стиль для клиента -->
+        <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/client.css">
+
+        <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/1.css"> 
+        
 
         <!-- Дата -->
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/cupertino/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/cupertino/jquery-ui.css">       
         <!-- /Дата -->
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="//<?=$_SERVER['SERVER_NAME']?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="http://yandex.st/jquery/2.1.1/jquery.min.js"></script> 
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-        <script src="datepicker-fr.js"></script>
+
+       
+	<script src="//<?=$_SERVER['SERVER_NAME']?>/scroll/jquery.scrollTo.js"></script>
+
+	
+        
         
 <!-- Подключение скриптов и стилей в head -->
 </head>
@@ -120,7 +128,7 @@
 
         <!-- header -->
         
-<header id="top" class="navbar navbar-<?php echo ($page == '') ? "fixed" : "static"; ?>-top bs-docs-nav" role="banner">
+<header id="top" class="navbar navbar-static-top navbar-inverse  bs-docs-nav" role="banner">
        
           <div class="container">
 
@@ -135,8 +143,8 @@
 
               </button>
 
-              <a class="navbar-brand hidden-xs" href="/">5+ автомат</a>
-              <a class="navbar-brand visible-xs" href="/">А+5</a>
+              <a class="navbar-brand hidden-xs" href="/client">5+ автомат</a>
+              <a class="navbar-brand visible-xs" href="/client">А+5</a>
 
               <!-- Телефон navbar-brand-xs -->
 
@@ -153,24 +161,19 @@
             <div class="row">
               <nav class="collapse navbar-collapse bs-navbar-collapse" id='q1'  role="navigation">
                 <!-- меню -->
-                <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
                   <ul class="nav navbar-nav">
                     <li>
-                      <a href="/oplata.html">ОПЛАТА</a>
+                      <a href="/client">Проекты    &nbsp; <span class="badge pull-right bg-red">4</span></a>
                     </li>
                     <li>
-                      <a class="hidden-sm" href="/гарантии.html">ГАРАНТИИ</a>
-                    </li>
-                    <li>
-                      <a href="/условия-работы.html">УСЛОВИЯ</a>
+                      <a href="/условия-работы.html">  &nbsp;<span class="badge pull-right bg-blue">?</span></a>
                     </li>
 
                     <li>
-                      <a href="/услуги.html">УСЛУГИ</a>
-                    </li>
-                    <li>
-                      <a href="/контакты.html">КОНТАКТЫ</a>
-                    </li>
+                      <a class="hidden-sm" href="/гарантии.html"> <span class="glyphicon glyphicon-cog"> </span> Настройки</a> 
+                    </li>      
+                    
 
                   </ul>
                 </div>
@@ -182,18 +185,32 @@
                     <span class="dotted font60 " >Новосибирск</span>
                   </span>
                 </a>
-                <div  class="col-lg-offset-1 col-md-2  col-md-offset-1 col-sm-1 col-xs-12 ">
+
+                <div  class=" col-md-2  col-sm-1 col-xs-12 ">
                   <!-- логин  -->
                   <ul class="nav navbar-nav">
                     <li>
-                      <a class="pointer" id="login"  data-toggle="modal" data-target="#myModal" >
-                        Вход или
-                        <br />
-                        Регистрация
-                      </a>
-                    </li>
+                      <a class="pointer" data-toggle="modal" data-target="#myModal" > 
+                      <span class="glyphicon glyphicon-user"></span>
+                        Максим                       
+                      </a> 
+                    </li>   
                   </ul>
                 </div>
+                <div  class="col-md-2   col-sm-1 col-xs-12 ">
+                  <!-- логин  -->
+                  <ul class="nav navbar-nav">                   
+                    <li>   
+                    <a class="pointer"   data-toggle="modal" data-target="#myModal" >                 
+                        Выход
+                      </a> 
+                    </li>
+
+                  </ul>
+                </div>
+
+
+
               </nav>
               <!-- /row --> </div>
 

@@ -199,9 +199,12 @@ min-width: 220px !important;
     text-indent: 40px;
 }
           
-.bs-docs-masthead{
+.p-top80{
     padding-top: 80px !important;
 
+}
+.p-top10{
+    padding-top: 10px !important;
 }
 
 .pd{

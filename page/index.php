@@ -3,7 +3,7 @@
     include "head_part.php"; // это подключит страницу хедер
 ?>
 
-<main id="content" class="bs-docs-masthead" role="main">
+<main id="content" class="bs-docs-masthead p-top80" role="main">
           <div class="container"> 
             <h1>5+ Автомат</h1>
             <p class="lead">
