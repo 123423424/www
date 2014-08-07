@@ -14,7 +14,7 @@ $(function(){
     ul.addClass('list-unstyled');
 
     $('#drop a').click(function(){
-        // Simulate a click on the file input button
+        // Simulate a click on the file input buttoАn
         // to show the file browser dialog
         $(this).parent().find('input').click();
     });

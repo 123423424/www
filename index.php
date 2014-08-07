@@ -3,76 +3,72 @@ define("CONSTANT5A", "Hello 5A world.");
 
 header('Content-Type: text/html; charset=utf-8');
 
-    $page = $_GET['q'];
-	
-    //Вывести запрос
-    //echo $_GET['q'];
-    
-
-$page_arr = explode('/', $page);
-$page_count = count($page_arr);
-$page = $page_arr [0];
-
-//echo $page_count.'<hr />';
-//phpinfo();
-
-//функция определения страницы        
-function page ($url, $file_open)   {
-        global $page;
-     if($page == $url)  {
-            $page = 1;
-        	include_once $file_open;
-    } 
-}    
-
-  
-if ($page_count == 1) {
-page ('', "page/index.php") ;      
-page ('заказать-работу.html', "page/order.php") ; 
-page ('oplata.html', "page/oplata.php") ; 
-page ('гарантии.html', "page/warranty.php") ; 
-page ('контакты.html', "page/contacts.php") ;   
-page ('условия-работы.html', "page/operating_conditions.php") ; 
-page ('услуги.html', "page/services.php") ; 
-
-}      
-
-
-    if ($page_arr[0]== 'client') {      
-        
-        $nomer_order = $page_arr[1]*1;        
-        if ($nomer_order > 1){
-            include_once "page/client/order.php";
-        $page = 1;
-        }  else {
-            page ('client', "page/client/index.php"); 
+//Определение класса для загрузки страницы
+class OpenPages {  
+    public $fileOpen; //Инклуюируемый фаил
+    public $page404; //Чекер для странцы 404
+    public $pageArr; //Массив для ЮРЛ
+   // public $page_count;
+    public $nomer_order; //Для заказов номер второй подстаринцы  *(client/165943)
+    //protected $url; 
+        public function __construct()
+        {               
+                $this->page_arr = explode('/', $_GET['q']); //Забрать строку 
+               // $this->page_count = count($this->page_arr);                
         }
-    }
-
-
-
-if($page !=1){
-	header("HTTP/1.0 404 Not Found");
-	//header('Location: 404.php');
-    //include('404.html');
-	exit;
+        
+        //функция определения страницы
+        public function page ($url, $file_open)   {            
+            //Если есть прямая (заказать-работу.html) страница 
+             if($this->page_arr [0] == $url)  {
+                    $this->page404 = 1;
+                	include_once $file_open; 
+                    die();
+                }
+              //Eсли зашли в client
+              if ($this->page_arr[0]== 'client') { 
+                    $this->nomer_order = $this->page_arr[1]*1;        
+                        if ($this->nomer_order > 1){
+                            include_once "page/client/order.php";                            
+                        } else {
+                            include_once "page/client/index.php";                             
+                                }
+                        }
+              $this->page404 = 1;
+            }
+            
+            //функция для вызова 404 ошибки
+            public function page404 ()   { 
+                    if($this->page404 !=1){
+                	header("HTTP/1.0 404 Not Found");
+                	header('Location: 404.php');
+                    //include('404.html');
+                	exit;
+                }               
+            }       
+        
+        //Функция отображения переменных для отладки
+        public function getVar ($var){
+            return $this->$var.'<br />';
+        }
+        
 }
 
-//page ('', "page/index.php") ; 
+$pageO = new OpenPages;
 
 
-/*
-page ('', "page/index.php") ; 
-page ('', "page/index.php") ; 
-page ('', "page/index.php") ;   
-page ('', "page/index.php") ; 
-page ('', "page/index.php") ; 
-page ('', "page/index.php") ;      
-*/        
-   
-      
-   
+$pageO->page ('', "page/index.php") ; 
+$pageO->page ('заказать-работу.html', "page/order.php"); 
+$pageO->page ('oplata.html', "page/oplata.php") ; 
+$pageO->page ('гарантии.html', "page/warranty.php") ; 
+$pageO->page ('контакты.html', "page/contacts.php") ;   
+$pageO->page ('условия-работы.html', "page/operating_conditions.php") ; 
+$pageO->page ('услуги.html', "page/services.php") ; 
 
+
+$pageO->page404 ();     
+	
+ 
     
     
 ?>

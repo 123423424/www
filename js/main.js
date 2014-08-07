@@ -1,3 +1,10 @@
+//Отображение без скачеков
+$(document).ready(function(){ 	
+	//Плавное отображение страницы
+	$('body').animate({opacity: 0},0 );
+	$('body').animate({opacity: 1},300 );
+});
+
 
 //"Открыть" форму регистрации и ввода
 $('a#login').click(function (e) {
@@ -70,7 +77,7 @@ var myVar , msg2;
 myVar = getCookie("ipGeoCookie");
 myVar = decodeURIComponent(myVar);
 	//Если нет КУКИ
-if (myVar == "null"){
+/*if (myVar == "null"){
 	$.ajax({
 	type: "POST",
 	url: "ip/example.php"
@@ -86,7 +93,7 @@ if (myVar == "null"){
 	//Если куки установлена
 else {
 	$('.geoI').html(decodeURIComponent(myVar));	
- } 
+ } */
 
 //Выбор другого города
 $('.choice') .click(function(event) {	
@@ -107,8 +114,3 @@ $.ajax({
 }); 
 
 
-//Отображение без скачеков
-$(document).ready(function(){ 	
-	//Плавное отображение страницы
-	$('body').animate({opacity: 1},300 );
-});

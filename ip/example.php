@@ -25,7 +25,7 @@
 //setcookie("ipGeoCookie", '', time()-(60*60*24*365), "/"); die(); 
 
 if (isset($_COOKIE['ipGeoCookie'])) {
-    echo $_COOKIE['ipGeoCookie'];   
+    echo $_COOKIE['ipGeoCookie'];    
     die();     
 } 
 

@@ -27,13 +27,14 @@
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/1.css">
-        <?php echo ($page == 'заказать-работу.html') ? '<link rel="stylesheet" href="css/order.css">' : ""; ?>
+        <?php echo ($pageO->page_arr [0] == 'заказать-работу.html') ? '<link rel="stylesheet" href="css/order.css">' : ""; ?>
 
         <!-- Дата -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/cupertino/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
         <!-- /Дата -->
 
+		<!--  -->
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="http://yandex.st/jquery/2.1.1/jquery.min.js"></script> 
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
