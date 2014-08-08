@@ -83,3 +83,14 @@ body .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:
 	opacity: 0;
 	
 }
+.jspVerticalBar{
+	width: 5px;
+	  transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 0.6s ease-in-out; /** Firefox **/
+    -o-transition: all 0.6s ease-in-out; /** Opera **/
+}
+.jspVerticalBar:hover{
+	width: 10px;
+	
+};

@@ -186,7 +186,7 @@ col-xs-12 col-sm-3 col-sm-offset-9 ">
                 </div>
                 <hr />
 
-                <h2>Чат</h2>
+                <h2>Чат</h2> <div id="ffff"></div>
                 <div class="Chat">
                   <div class="dialogue btn-mgb10">
                   <div class="scroll-pane">

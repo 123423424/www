@@ -61,6 +61,24 @@ $('.scroll-pane').scroll(function(){
 	}
 });
 
+/*
+
+var mousCh = 0;
+
+
+
+setTimeout (function() {
+$('.jspVerticalBar').hover(function() {$('.jspVerticalBar').stop().animate({width: "10px"},200 ); }, 
+		function() { 
+			$('.jspVerticalBar').stop().animate({width: "5px"},600 );
+		});	
+}, 800); 
+
+
+*/
+
+
+
 //Приссоединение диалога
 $("#bt-add_mess").click(function() {
 		$(".ajax-exmpl").clone().find(".name-mess").html(uploadDialog+' диалог.').end().prependTo("#add-mess_bl").show("slow").removeClass('ajax-exmpl');
