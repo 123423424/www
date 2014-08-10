@@ -121,7 +121,7 @@
 
         <!-- header -->
         
-<header id="top" class="navbar navbar-<?php echo ($page == '') ? "fixed" : "static"; ?>-top bs-docs-nav" role="banner">
+<header id="top" class="navbar navbar-<?php echo ($this->page_arr [0] == '') ? "fixed" : "static"; ?>-top bs-docs-nav" role="banner">
        
           <div class="container">
 
@@ -141,13 +141,10 @@
 
               <!-- Телефон navbar-brand-xs -->
 
-              <a class="navbar-brand navbar-brand60 pointer city visible-xs navbar-brand-xs p-centr"  data-toggle="modal" data-target="#geo">
-                <span class="geoI">
-                  (383) 380-22-00
-                  <br />
-                  <span class="dotted font60 " >Новосибирск</span>
+              <a class="navbar-brand navbar-brand60 pointer city visible-xs  navbar-brand-xs p-centr"  data-toggle="modal" data-target="#geo">
+                <span class="geoI">                  
                 </span>
-              </a>
+              </a>  
 
             </div>
 
@@ -175,14 +172,12 @@
 
                   </ul>
                 </div>
-                <!-- Телефон  -->
+                <!-- Телефон   -->
                 <a class="navbar-brand navbar-brand60 pointer city hidden-xs"  data-toggle="modal" data-target="#geo">
-                  <span class="geoI">
-                    (383) 380-22-00
-                    <br />
-                    <span class="dotted font60 " >Новосибирск</span>
+                  <span class="geoI">                  
+                    
                   </span>
-                </a>
+                </a> 
                 <div  class="col-lg-offset-1 col-md-2  col-md-offset-1 col-sm-1 col-xs-12 ">
                   <!-- логин  -->
                   <ul class="nav navbar-nav">

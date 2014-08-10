@@ -70,8 +70,8 @@
           <h2 class="bs-docs-featurette-title">Шаг 1. Информация о заказе</h2>
           <br />
           <div class="form-group">
-            <label for="check1" class="col-sm-2 control-label">Тип</label>
-            <div class="col-sm-10">
+            <label for="check1" class="col-sm-3 control-label">Тип</label>
+            <div class="col-sm-9">
 
               <select id="check1" class="form-control" style="" size="1" name="check1" >
                 <option selected="" value="">выберите тип работы</option>
@@ -114,23 +114,23 @@
           <div id="vis2">
 
             <div id = "form-other" class="form-group">
-              <label for="other" class="col-sm-2 control-label">Другое</label>
-              <div class="col-sm-10">
+              <label for="other" class="col-sm-3 control-label">Другое</label>
+              <div class="col-sm-9">
                 <input type="text" class="form-control" id="other" placeholder="Напишите тип работы" name="other" ></div>
               <br />
             </div>
 
             <div class="form-group">
-              <label for="name_topic" class="col-sm-2 control-label">Тема</label>
-              <div class="col-sm-10">
+              <label for="name_topic" class="col-sm-3 control-label">Тема</label>
+              <div class="col-sm-9">
                 <input type="text" class="form-control" 
               id="name_topic" name="name_topic"></div>
               <p class="form-mess bg-danger padding10">Укажите тему работы</p>
             </div>
 
             <div class="form-group">
-              <label for="item_name" class="col-sm-2 control-label">Предмет</label>
-              <div class="col-sm-10">
+              <label for="item_name" class="col-sm-3 control-label">Предмет</label>
+              <div class="col-sm-9">
                 <input type="text" class="form-control" 
               id="item_name" name="item_name" placeholder="Например ЭКОНОМИКА"></div>
               <p id="item_name-mass" class="form-mess bg-danger padding10">Укажите название предмета</p>
@@ -144,27 +144,27 @@
             
 
               <div class="form-group">
-                <label for="datepicker" class="col-sm-2 control-label">Срок</label>
-                <div class="col-sm-10">
+                <label for="datepicker" class="col-sm-3 control-label">Срок</label>
+                <div class="col-sm-9">
                   <input type="text" class="form-control"  id="datepicker" name="datepicker"></div>
                 <p class="form-mess bg-danger padding10">Укажите срок сдачи</p>
 
               </div>
-              <p id ='datepicker-info' class="help-block col-sm-offset-2">
+              <p id ='datepicker-info' class="help-block col-sm-offset-3">
                 ВАЖНО: Обратите внимание. Работа будет отправлена в течение указанного дня. Если срок известен более точный, его нужно написать в требованиях к работе (ниже). Укажите когда хотите получить готовую работу.
               </p>
 
               <div class="form-group">
-                <label for="name_sources" class="col-sm-2 control-label">Объем</label>
-                <div class="col-sm-10">
+                <label for="name_sources" class="col-sm-3 control-label">Объем</label>
+                <div class="col-sm-9">
                   <input type="text" class="form-control" 
               id="name_sources" name="name_sources" placeholder="Пример: 25 страниц- записка и 8 листов А1 чертежей" ></div>
                 <p class="form-mess bg-danger padding10">Укажите объем</p>
               </div>
 
               <div class="form-group">
-                <label for="name_requirement" class="col-sm-2 control-label">Требования</label>
-                <div class="col-sm-10">
+                <label for="name_requirement" class="col-sm-3 control-label">Требования</label>
+                <div class="col-sm-9">
                   <textarea id="name_requirement" name="name_requirement" class="form-control"  rows="0" placeholder="Рекомендация: описать наиболее подробно задание и время отправки Вам готовой работы"></textarea>
                  
                 </div>
@@ -191,22 +191,22 @@
           <h2 class="bs-docs-featurette-title">Шаг 2. Контактная информация</h2>
           <div class="lead">Ваши контакты:</div>
           <div class="form-group">
-            <label for="name_name" class="col-sm-2 control-label">Имя</label>
-            <div class="col-sm-10">
+            <label for="name_name" class="col-sm-3 control-label">Имя</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" 
               id="name_name" name="name_name" ></div>
             <p class="form-mess bg-danger padding10">Укажите Ваше имя</p>
           </div>
           <div class="form-group">
-            <label for="name_phone" class="col-sm-2 control-label">Телефон</label>
-            <div class="col-sm-10">
+            <label for="name_phone" class="col-sm-3 control-label">Телефон</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" 
               id="name_phone" name="name_phone"  placeholder="Пример:+7-913-123-12-12"></div>
             <p class="form-mess bg-danger padding10">Укажите Ваш телефон</p>
           </div>
           <div class="form-group">
-            <label for="name_mail" class="col-sm-2 control-label">E-mail</label>
-            <div class="col-sm-10">
+            <label for="name_mail" class="col-sm-3 control-label">E-mail</label>
+            <div class="col-sm-9">
               <input type="text" name="name_mail"  class="form-control" 
               id="name_mail">
               <p id="name_mail_name-mass" class="form-mess bg-danger padding10"> </p>
@@ -216,7 +216,7 @@
             <p class="form-mess bg-danger padding10">Укажите Вашу почту</p>
           </div>
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-3 col-sm-9">
               <label for="name_vk" class="control-label">
                 Ссылка на Вашу страницу ВКонтакте для связи (не обязательно):
               </label>
@@ -225,7 +225,7 @@
           </div>
           <hr />
 
-          <div class="col-sm-offset-2  col-sm-10">
+          <div class="col-sm-offset-3  col-sm-9">
             <div class="lead margin-bottom-not">Уточняющие (не обяательно)</div>
             <div class="form-group">
 

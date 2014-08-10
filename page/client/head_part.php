@@ -148,10 +148,7 @@
               <!-- Телефон navbar-brand-xs -->
 
               <a class="navbar-brand navbar-brand60 pointer city visible-xs navbar-brand-xs p-centr"  data-toggle="modal" data-target="#geo">
-                <span class="geoI">
-                  (383) 380-22-00
-                  <br />
-                  <span class="dotted font60 " >Новосибирск</span>
+                <span class="geoI">                  
                 </span>
               </a>
 
@@ -160,7 +157,7 @@
             <div class="row">
               <nav class="collapse navbar-collapse bs-navbar-collapse" id='q1'  role="navigation">
                 <!-- меню -->
-                <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
+                <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
                   <ul class="nav navbar-nav">
                     <li>
                       <a href="/client">Проекты    &nbsp; <span class="badge pull-right bg-red">4</span></a>
@@ -178,14 +175,11 @@
                 </div>
                 <!-- Телефон  -->
                 <a class="navbar-brand navbar-brand60 pointer city hidden-xs"  data-toggle="modal" data-target="#geo">
-                  <span class="geoI">
-                    (383) 380-22-00
-                    <br />
-                    <span class="dotted font60 " >Новосибирск</span>
+                  <span class="geoI">                    
                   </span>
                 </a>
 
-                <div  class=" col-md-2  col-sm-1 col-xs-12 ">
+                <div  class=" col-lg-2 col-md-2  col-sm-3 col-xs-12 ">
                   <!-- логин  -->
                   <ul class="nav navbar-nav">
                     <li>

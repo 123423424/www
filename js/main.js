@@ -3,6 +3,13 @@ $(document).ready(function(){
 	//Плавное отображение страницы
 	$('body').animate({opacity: 0},0 );
 	$('body').animate({opacity: 1},300 );
+    
+    //Ширина и высота экрана
+   /* var siW, siH;
+    siW = $(window).width();   // returns width of browser viewport
+    siH = $(window).height();   // returns width of browser viewport
+    alert('ширина:'+siW+'. Высота:'+siH); */
+    
 });
 
 
@@ -80,22 +87,26 @@ myVar = decodeURIComponent(myVar);
 if (myVar == "null"){
 	$.ajax({
 	type: "POST",
-	url: "ip/example.php"
+	url: "/ip/example.php"
 	// ,	data: { name: "Jo2h3n" }
-	})
-	.done(function( msg ) {
+	}).done(function( msg ) {
 
 			 msg2 = msg;
 
-			$('.geoI').html(decodeURIComponent(msg));
+			$('.geoI').html(decodeURIComponent(msg)+ '-4-');
 
 			//$('#tyt').html('myVar='+ myVar+'/msg3-null = '+msg2).css( "color", "red");
 	});
 }
 	//Если куки установлена
-else {
-	$('.geoI').html(decodeURIComponent(myVar));	
+else {     
+	$('.geoI').html(decodeURIComponent(myVar)+ '-3-');	
+    
  } 
+
+
+
+
 
 //Выбор другого города
 $('.choice') .click(function(event) {	
@@ -104,15 +115,18 @@ $('.choice') .click(function(event) {
    geo = $( this ).data('geo');
 $.ajax({
 	type: "POST",
-	url: "q.php"
+	url: "/ip/example.php"
 	 ,	data: { name: geo }
-	})
-	.done(function( msg ) {
+	}).done(function( msg ) {
+	  
 
 			 msg2 = msg;
 			$('.geoI').html(decodeURIComponent(msg));
 			
-	});
+	}) .fail(function() {
+alert( "error" );
+});
+    
 	$('.close') .click();  
 }); 
 

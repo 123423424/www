@@ -158,6 +158,13 @@ min-width: 220px !important;
     text-align: center;
     color: hsl(264, 34%, 36%);
 }
+.navbar-inverse  .menu{
+    text-align: center;
+    color: white;
+}
+
+
+
 .icon-bar {    
     width: 37px !important;
 } 
@@ -261,4 +268,9 @@ body {
 #info-intro{
     display: none;
 }
+
+.red{
+    background: red;
+}
+
 

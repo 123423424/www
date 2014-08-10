@@ -61,7 +61,7 @@ wrapper.scrollTop(prevScrollH).on('scroll', function(e){
     if($that.scrollTop() <= 0){ alert('dd')
         $.ajax({
             type: "POST",
-			url: "q.php",
+			url: "/q.php",
             //dataType: 'html',
             beforeSend: function(){
                 layer.show();

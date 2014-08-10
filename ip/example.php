@@ -14,7 +14,7 @@
                 $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>3Новосибирск</span>";
                 break;
              default:
-               $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>4Новосибирск</span>";
+               $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>5Новосибирск</span>";
         }
             //Поставить куки
             setcookie("ipGeoCookie", rawUrlEncode($name_echo) , time()+(60*60*24*365), "/");                
@@ -84,6 +84,7 @@ echo $name_echo;
 
 
 
+?>
  
  
  
