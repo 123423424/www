@@ -5,16 +5,16 @@
       if (isset($siti)) {        
             switch ($siti) {
             case "Moskva":
-                $name_echo = "(495) 975-93-55 <br /> <span class='dotted font60'>Москва</span>";
+                $name_echo = "(495) 975-93-55 <br /> <span class='dotted font60'>1Москва</span>";
                 break;
             case "Piter":
-                $name_echo =  "(812) 429-71-14 <br /> <span class='dotted font60'>Санкт-Петербург</span>";
+                $name_echo =  "(812) 429-71-14 <br /> <span class='dotted font60'>2Санкт-Петербург</span>";
                 break;
             case "Novosib":
-                $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосибирск</span>";
+                $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>3Новосибирск</span>";
                 break;
              default:
-               $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосибирск</span>";
+               $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>4Новосибирск</span>";
         }
             //Поставить куки
             setcookie("ipGeoCookie", rawUrlEncode($name_echo) , time()+(60*60*24*365), "/");                
@@ -64,16 +64,16 @@ $data = $gb->getRecord('46.46.128.0'); //Москва
  $name =$data["district"];
  switch ($name) {
     case "Центральный федеральный округ":
-        $name_echo = "(495) 975-93-55 <br /> <span class='dotted font60'>Москва</span>";
+        $name_echo = "(495) 975-93-55 <br /> <span class='dotted font60'>5Москва</span>";
         break;
     case "Северо-Западный федеральный округ":
-        $name_echo =  "(812) 429-71-14 <br /> <span class='dotted font60'>Санкт-Петербург</span>";
+        $name_echo =  "(812) 429-71-14 <br /> <span class='dotted font60'>6Санкт-Петербург</span>";
         break;
     case "Сибирский федеральный округ":
-        $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосибирск</span>";
+        $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>7Новосибирск</span>";
         break;
      default:
-       $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>Новосибирск</span>";     
+       $name_echo = "(383) 380-22-00 <br /> <span class='dotted font60'>8Новосибирск</span>";     
         
 }
 

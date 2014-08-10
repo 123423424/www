@@ -29,9 +29,11 @@
         <!-- Стиль для клиента -->
         <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/client.css">
         <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/1.css"> 
+        <link rel="stylesheet" href="//<?=$_SERVER['SERVER_NAME']?>/css/client_ch.css">
         <!-- Дата -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/cupertino/jquery-ui.css">
-        <script src="//<?=$_SERVER['SERVER_NAME']?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <!-- Дата 
+        <script src="//<?=$_SERVER['SERVER_NAME']?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>  -->
         <script src="http://yandex.st/jquery/2.1.1/jquery.min.js"></script> 
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>       
        

@@ -80,7 +80,7 @@ body .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:
   }
 
 .Chat{
-	opacity: 0;
+	//opacity: 0;
 	
 }
 .jspVerticalBar{
@@ -94,3 +94,42 @@ body .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:
 	width: 10px;
 	
 };
+
+
+.mess {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #999;
+}
+#layer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: url(http://www.igrice-tigrice.com/wp-content/themes/fungames/images/loading.gif) 50% 50% no-repeat rgba(0,0,0,.3);
+}
+
+/* ----  */
+#contentcontainer {
+    width: 200px;
+    height: 300px;
+    border: 1px solid #999;
+    overflow-y: auto;
+}
+.mess {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #999;
+}
+#layer2 {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: url(http://www.igrice-tigrice.com/wp-content/themes/fungames/images/loading.gif) 50% 50% no-repeat rgba(0,0,0,.3);
+}
+
+.scroll-pane{
+	//height: 300px;
+}
+

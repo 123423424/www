@@ -77,14 +77,16 @@ var myVar , msg2;
 myVar = getCookie("ipGeoCookie");
 myVar = decodeURIComponent(myVar);
 	//Если нет КУКИ
-/*if (myVar == "null"){
+if (myVar == "null"){
 	$.ajax({
 	type: "POST",
 	url: "ip/example.php"
 	// ,	data: { name: "Jo2h3n" }
 	})
 	.done(function( msg ) {
+
 			 msg2 = msg;
+
 			$('.geoI').html(decodeURIComponent(msg));
 
 			//$('#tyt').html('myVar='+ myVar+'/msg3-null = '+msg2).css( "color", "red");
@@ -93,7 +95,7 @@ myVar = decodeURIComponent(myVar);
 	//Если куки установлена
 else {
 	$('.geoI').html(decodeURIComponent(myVar));	
- } */
+ } 
 
 //Выбор другого города
 $('.choice') .click(function(event) {	
@@ -102,15 +104,18 @@ $('.choice') .click(function(event) {
    geo = $( this ).data('geo');
 $.ajax({
 	type: "POST",
-	url: "ip/example.php"
+	url: "q.php"
 	 ,	data: { name: geo }
 	})
 	.done(function( msg ) {
+
 			 msg2 = msg;
 			$('.geoI').html(decodeURIComponent(msg));
 			
 	});
 	$('.close') .click();  
 }); 
+
+
 
 

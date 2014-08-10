@@ -2,6 +2,7 @@
 	defined('CONSTANT5A') or die();    
     include "head_part.php"; // это подключит страницу хедер
 ?>
+
  <!-- Полоса прокуртки начало -->
     <!-- styles needed by jScrollPane - include in your own sites -->
     <link type="text/css" href="//<?=$_SERVER['SERVER_NAME']?>/scrollline/style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
@@ -9,6 +10,7 @@
     <script type="text/javascript" src="//<?=$_SERVER['SERVER_NAME']?>/scrollline/script/jquery.mousewheel.js"></script>
     <!-- the jScrollPane script -->
     <script type="text/javascript" src="//<?=$_SERVER['SERVER_NAME']?>/scrollline/script/jquery.jscrollpane.js"></script>  
+    
 <script type="text/javascript">
 $(function()
 {
@@ -43,6 +45,64 @@ $(function()
 </script>
   <!-- / Полоса прокуртки конец -->
 
+ <!-- Modal  Редактирование Заказа -->
+        <div class="modal fade bs-example-modal-lg" id="edit-project" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content panel panel-primary">
+              <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title panel-title" id="myModalLabel">Редактирование проекта</h3>
+              </div>
+              <div id = 'insert-project' class="modal-body ">
+
+              	<form class="form-horizontal" role="form">
+
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-10">
+				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				 
+				  
+				</form>
+
+
+
+
+              </div>
+
+              <div class="modal-footer">
+                <div class="text-left">
+                  Если вашего города нет в списке, вы можете  связаться с нами
+                  <a href="/контакты.html" target="_blank">удобным для вас способом</a>
+                  .
+                </div>
+
+                    <div class="btn-group btn-group-justified">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default">Зарегистрироваться</button>
+                      </div>
+                      <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                      </div>
+                    </div>
+                  
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
 
 
      
@@ -75,40 +135,46 @@ $(function()
           <div class="container text-left">
             <div class="row">
               <div  class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                <button type="button" class="btn btn-warning mg-bott
-col-xs-12 col-sm-3 col-sm-offset-9 ">
+                <button id='btm-edit-ord' type="button" class="btn btn-warning mg-bott col-xs-12 col-sm-3 col-sm-offset-9" data-toggle="modal" data-target="#edit-project">
+
+                
+
                   <span class="glyphicon glyphicon-pencil "></span>
                   Редактировать
                 </button>
                 <table class="table table-striped text-left">
                   <tbody>
                     <tr>
-                      <td>
-                        Номер заказа: <strong>131112</strong>
+                    	
+
+                      <td class = 'td-order'>
+                        <span class='dTitle'>Номер заказа: </span> <strong data-name="nomer" class='dVolume' >131112</strong>
                         <small> <em>04/08/2014</em>
                         </small>
                       </td>
-                      <td>
-                        Срок:
-                        <strong>11.08.2014</strong>
+
+                      <td class = 'td-order'>
+                        <span class='dTitle'>Срок:</span>
+                        <strong data-name="srok" class='dVolume' >11.08.2014</strong>
+                        
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td class = 'td-order' colspan="2">
+                        <span class='dTitle'>Тема:</span> 
+                        <strong data-name="tema" class='dVolume' >Уголовное право.</strong>
                       </td>
                     </tr>
 
                     <tr>
-                      <td colspan="2">
-                        Тема:
-                        <strong>Уголовное право.</strong>
+                      <td class = 'td-order'>
+                        <span class='dTitle'>Предмет:</span> <strong data-name="predmet" class='dVolume' >Уголовное право.</strong>                      
+                        
                       </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        Предмет:                        
-                        <strong>Уголовное право.</strong>
-                      </td>
-                      <td>
-                        Тип:
-                        <strong>контрольная работа</strong>
+                      <td class = 'td-order'>                        
+                        <span class='dTitle'>Тип:</span> <strong data-name="tip" class='dVolume' >контрольная работа.</strong> 
                       </td>
                     </tr>
                   </tbody>
@@ -125,31 +191,33 @@ col-xs-12 col-sm-3 col-sm-offset-9 ">
                       <table class="table table-striped text-left">
                         <tbody>
                           <tr>
-                            <td>
-                              ВУЗ:
-                              <strong>НГУЭУ (нархоз)</strong>
+                            <td class = 'td-order'>
+                              <span class='dTitle'>ВУЗ:</span>  
+                              <strong class='dVolume' data-name="vyz" >НГУЭУ (нархоз)</strong>
                             </td>
-                            <td>
-                              Курс:
-                              <strong></strong>
+                            <td  class = 'td-order'>
+                              <span class='dTitle'>Курс:</span>
+                              <strong data-name="kyrs" class='dVolume' ></strong> 
+
                             </td>
                           </tr>
 
                           <tr>
-                            <td>
-                              Объем:
-                              <strong>по заданию</strong>
+                            <td class = 'td-order'>
+                              <span class='dTitle'>Объем:</span> 
+                              <strong data-name="obiim" class='dVolume' >по заданию</strong> 
                             </td>
-                            <td>
-                              Антиплагиат:
-                              <strong>80%</strong>
+                            <td class = 'td-order'>
+                              <span class='dTitle'>Антиплагиат:</span>
+                              <strong data-name="antip" class='dVolume' >80%</strong> 
                             </td>
                           </tr>
 
                           <tr>
-                            <td colspan="2">
-                              Требования к работе:
-                              <strong>Уголовное право ч.2 . Контрольная. Вариант 5
+                            <td colspan="2" class = 'td-order'>
+                              <span class='dTitle'>Требования к работе:</span>
+                              <strong data-name="trebov" class='dVolume' >
+                              Уголовное право ч.2 . Контрольная. Вариант 5
                                 <span>
                                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, nisi cum explicabo soluta totam odit tempore qui reprehenderit dignissimos! Deserunt, cupiditate. Dolore eos autem at distinctio, fugiat repellendus cum culpa!
                                 </span>
@@ -165,16 +233,16 @@ col-xs-12 col-sm-3 col-sm-offset-9 ">
                             </td>
                           </tr>
                           <tr>
-                            <td colspan="2">
-                              Файлы:
-                              <strong><br />
-                                53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo.pdf
+                            <td colspan="2"  class = 'td-order'>
+                              <span class='dTitle'>Файлы:</span>
+                              <strong data-name="files" class='dVolume' ><br />
+                              	<span class="file">53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo1.pdf</span>
                                 <br />
-                                53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo.pdf
+                                <span class="file">53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo2.pdf</span>
                                 <br />
-                                53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo.pdf
+                                <span class="file">53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo3.pdf</span>
                                 <br />
-                                53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo.pdf
+                                <span class="file">53dfae12470b0--Metodicheskie_ukazania_Ugolovnoe_pravo4.pdf</span>
                                 <br /></strong> 
                             </td>
                           </tr>
@@ -191,12 +259,68 @@ col-xs-12 col-sm-3 col-sm-offset-9 ">
                   <div class="dialogue btn-mgb10">
                   <div class="scroll-pane">
                       <div id="contentcontainer">
-                    
+
+<!-- Сюда будет вставлятся новый текст -->
+                        <div id="add-mess_bl"></div>
+
+<!-- НАЧАЛО просто текс 
+                      <div class="dial dialogue-author">
+                            <div class="row">
+                              <div class="name-mess col-xs-12">Ксения (автор2)</div>
+                              <div class="col-xs-9 col-md-10">
+                                <span>Lorem ipsum dolor sit.</span>
+                                <span>Ab deleniti accusantium consequuntur!</span>
+                                <span>Error, consequuntur aspernatur obcaecati.</span>
+                                <span>Inventore neque, repellat odit.</span>
+                              </div>
+                              <div class="col-xs-3 col-md-2">04.08.14</div>
+                            </div>
+                          </div>
+
+                          <div class="dial dialogue-author">
+                            <div class="row">
+                              <div class="name-mess col-xs-12">Ксения (автор2)</div>
+                              <div class="col-xs-9 col-md-10">
+                                <span>Lorem ipsum dolor sit.</span>
+                                <span>Ab deleniti accusantium consequuntur!</span>
+                                <span>Error, consequuntur aspernatur obcaecati.</span>
+                                <span>Inventore neque, repellat odit.</span>
+                              </div>
+                              <div class="col-xs-3 col-md-2">04.08.14</div>
+                            </div>
+                          </div>
+
+                          <div class="dial dialogue-author">
+                            <div class="row">
+                              <div class="name-mess col-xs-12">Ксения (автор2)</div>
+                              <div class="col-xs-9 col-md-10">
+                                <span>Lorem ipsum dolor sit.</span>
+                                <span>Ab deleniti accusantium consequuntur!</span>
+                                <span>Error, consequuntur aspernatur obcaecati.</span>
+                                <span>Inventore neque, repellat odit.</span>
+                              </div>
+                              <div class="col-xs-3 col-md-2">04.08.14</div>
+                            </div>
+                          </div>
+
+                          <div class="dial dialogue-author">
+                            <div class="row">
+                              <div class="name-mess col-xs-12">Ксения (автор2)</div>
+                              <div class="col-xs-9 col-md-10">
+                                <span>Lorem ipsum dolor sit.</span>
+                                <span>Ab deleniti accusantium consequuntur!</span>
+                                <span>Error, consequuntur aspernatur obcaecati.</span>
+                                <span>Inventore neque, repellat odit.</span>
+                              </div>
+                              <div class="col-xs-3 col-md-2">04.08.14</div>
+                            </div>
+                          </div>
+КОНЕЦ просто текс -->                    
 
 
                       
 
-                        <div id="add-mess_bl"></div>
+
                         <div class="ajax-exmpl">
                           <div class="dial dialogue-author">
                             <div class="row">
@@ -211,89 +335,16 @@ col-xs-12 col-sm-3 col-sm-offset-9 ">
                             </div>
                           </div>
                         </div>
-                        <div  class="dial dialogue-author">
-                          <div class="row">
-                            <div class="name-mess col-xs-12">
-                              Cкрол тут!!!
-                              <a id ='scroll-id' href="#top5" name="top5">dddd</a>
-                            </div>
-                            <div class="col-xs-9 col-md-10">
-                              <span>Lorem ipsum dolor sit.</span>
-                              <span>Ab deleniti accusantium consequuntur!</span>
-                              <span>Error, consequuntur aspernatur obcaecati.</span>
-                              <span>Inventore neque, repellat odit.</span>
-                            </div>
-                            <div class="col-xs-3 col-md-2">04.08.14</div>
-                          </div>
-                        </div>
-                        <div class="dial dialogue-author">
-                          <div class="row">
-                            <div class="name-mess col-xs-12">Ксения (автор)</div>
-                            <div class="col-xs-9 col-md-10">
-                              <span>Lorem ipsum dolor sit.</span>
-                              <span>Ab deleniti accusantium consequuntur!</span>
-                              <span>Error, consequuntur aspernatur obcaecati.</span>
-                              <span>Inventore neque, repellat odit.</span>
-                            </div>
-                            <div class="col-xs-3 col-md-2">04.08.14</div>
-
-                          </div>
-                        </div>
-                        <div class="dial dialogue-author">
-                          <div class="row">
-                            <div class="name-mess col-xs-12">Ксения (автор5)</div>
-                            <div class="col-xs-9 col-md-10">
-                              <span>Lorem ipsum dolor sit.</span>
-                              <span>Ab deleniti accusantium consequuntur!</span>
-                              <span>Error, consequuntur aspernatur obcaecati.</span>
-                              <span>Inventore neque, repellat odit.</span>
-                            </div>
-                            <div class="col-xs-3 col-md-2">04.08.14</div>
-                          </div>
-                        </div>
-                        <div class="dial dialogue-author">
-                          <div class="row">
-                            <div class="name-mess col-xs-12">Ксения (автор5)</div>
-                            <div class="col-xs-9 col-md-10">
-                              <span>Lorem ipsum dolor sit.</span>
-                              <span>Ab deleniti accusantium consequuntur!</span>
-                              <span>Error, consequuntur aspernatur obcaecati.</span>
-                              <span>Inventore neque, repellat odit.</span>
-                            </div>
-                            <div class="col-xs-3 col-md-2">04.08.14</div>
-                          </div>
-                        </div>
-                        <div class="dial dialogue-author">
-                          <div class="row">
-                            <div class="name-mess col-xs-12">Ксения (автор5)</div>
-                            <div class="col-xs-9 col-md-10">
-                              <span>Lorem ipsum dolor sit.</span>
-                              <span>Ab deleniti accusantium consequuntur!</span>
-                              <span>Error, consequuntur aspernatur obcaecati.</span>
-                              <span>Inventore neque, repellat odit.</span>
-                            </div>
-                            <div class="col-xs-3 col-md-2">04.08.14</div>
-                          </div>
-                        </div>
-                        <div class="dial dialogue-author">
-                          <div class="row">
-                            <div class="name-mess col-xs-12">Ксения (автор5)</div>
-                            <div class="col-xs-9 col-md-10">
-                              <span>Lorem ipsum dolor sit.</span>
-                              <span>Ab deleniti accusantium consequuntur!</span>
-                              <span>Error, consequuntur aspernatur obcaecati.</span>
-                              <span>Inventore neque, repellat odit.</span>
-                            </div>
-                            <div class="col-xs-3 col-md-2">04.08.14</div>
-                          </div>
-                        </div>
+                        
                         <!-- Indicates a successful or positive action -->
                         <div id='bt-add_mess' class="dial" >
                           <button type="button"  class="btn btn-success col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">+показать еще 10 сообщений</button> <br />
                         </div>
                       
+</div><!-- / contentcontainer --> 
+<div id="layer"></div>
+
 </div>
-                      <!-- / contentcontainer --> </div>
                     
                     <!-- / scroll-pane --> </div>
                   <!-- / dialogue -->
@@ -321,8 +372,14 @@ col-xs-12 col-sm-3 col-sm-offset-9 ">
                 </div>
                 <!-- / Chat --> </div>
             </div>
-            <!-- / row --> </div>
-          <!-- / container --> </div>
+            <!-- / row --> </div><!-- / container --> 
+<div id="contentcontainer2"></div>
+<div id="layer2"></div>
+
+
+
+
+            </div>
         <!-- / bs-docs-featurette -->
 
 

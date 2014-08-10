@@ -25,16 +25,20 @@ class OpenPages {
                 	include_once $file_open; 
                     die();
                 }
+                
               //Eсли зашли в client
               if ($this->page_arr[0]== 'client') { 
-                    $this->nomer_order = $this->page_arr[1]*1;        
-                        if ($this->nomer_order > 1){
-                            include_once "page/client/order.php";                            
-                        } else {
-                            include_once "page/client/index.php";                             
-                                }
+                    //$this->nomer_order = $this->page_arr[1]*1;        
+                        if (is_numeric($this->page_arr[1]) ){
+                            include_once "page/client/order.php";  
+                            $this->page404 = 1;                          
+                        } 
+                        if (($this->page_arr[1])== 'q.php') {
+                            include_once "page/client/q.php";    
+                            $this->page404 = 1;                         
+                                } 
                         }
-              $this->page404 = 1;
+              
             }
             
             //функция для вызова 404 ошибки
