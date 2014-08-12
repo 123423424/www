@@ -30,17 +30,18 @@ class OpenPages {
                         if (is_numeric($this->page_arr[1]) ){
                             include_once "page/client/order.php";  
                             $this->page404 = 1; 
-                        }  else { include_once "page/client/index.php";  
+                            }  else { include_once "page/client/index.php";  
                             $this->page404 = 1;   }    
-                        }     
-                 //Установка города в ХЕД-меню
-            /* if ($this->page_arr[0]== 'ip') {                     
-                        if (($this->page_arr[1])== 'example.php') {
-                             echo    '-тут-'.$this->page_arr[1];
-                            include_once "ip/example.php";    
-                            $this->page404 = 1;                         
-                                } 
-                        } */   
+                        }   //  /client 
+                        
+                  //Eсли зашли в admin
+              if ($this->page_arr[0]== 'admin') { 
+                    include_once "page/admin/index.php";
+                     $this->page404 = 1; 
+                   
+                        }   //  /admin 
+                        
+         
                       
             } //функция /page
             
